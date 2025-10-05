@@ -1,0 +1,160 @@
+name: Sync from Classified Repository
+
+on:
+  # 定时触发 - 每24小时执行一次 (UTC 6:00 = 北京时间 14:00)
+  schedule:
+    - cron: '0 6 * * *'
+
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '手动同步原因'
+        required: false
+        default: '手动同步测试'
+        type: string
+
+# 允许此workflow写入到仓库
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+        fetch-depth: 0  # 获取完整历史
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "ChHsiching"
+        git config --global user.email "hsichingchang@gmail.com"
+
+    - name: Display environment info
+      run: |
+        echo "当前时间: $(date)"
+        echo "触发原因: ${{ github.event_name }}"
+        echo "工作目录: $(pwd)"
+        echo "仓库: ${{ github.repository }}"
+
+    - name: Show current Git status
+      run: |
+        echo "=== 当前分支 ==="
+        git branch -a
+        echo "=== 最近提交 ==="
+        git log --oneline -n 5
+        echo "=== 工作目录状态 ==="
+        git status
+
+    - name: Checkout Classified repository
+      run: |
+        echo "=== 检出Classified仓库 ==="
+        cd ..
+        if [ -d "GitHub-Chinese-Top-Charts-Classified" ]; then
+          echo "Classified仓库已存在，更新..."
+          cd GitHub-Chinese-Top-Charts-Classified
+          git pull origin main
+        else
+          echo "克隆Classified仓库..."
+          git clone https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts-Classified.git
+        fi
+        echo "Classified仓库检出完成"
+
+    - name: Execute sync script
+      run: |
+        echo "=== 开始执行同步脚本 ==="
+        ./scripts/sync_from_classified.sh
+
+    - name: Show sync results
+      run: |
+        echo "=== 同步结果 ==="
+        if [ -f "sync.log" ]; then
+          echo "同步日志:"
+          cat sync.log
+        fi
+
+        echo "=== 最新提交 ==="
+        git log --oneline -n 10
+
+        echo "=== sync-data分支状态 ==="
+        if git show-ref --verify --quiet "refs/heads/sync-data"; then
+          git checkout sync-data
+          echo "sync-data分支最新提交:"
+          git log --oneline -n 5
+          echo "README.md中的All Language表格行数:"
+          grep -c "^\|" README.md || echo "0"
+        else
+          echo "sync-data分支不存在"
+        fi
+
+    - name: Check for changes
+      id: check-changes
+      run: |
+        if git show-ref --verify --quiet "refs/heads/sync-data"; then
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "检测到sync-data分支有更改"
+        else
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "sync-data分支不存在或无更改"
+        fi
+
+    - name: Create sync status badge
+      if: always()
+      run: |
+        echo "=== 创建同步状态 ==="
+        echo "同步时间: $(date -u)" > SYNC_STATUS.md
+        echo "触发方式: ${{ github.event_name }}" >> SYNC_STATUS.md
+        echo "同步状态: ${{ job.status }}" >> SYNC_STATUS.md
+        if [ "${{ steps.check-changes.outputs.has_changes }}" = "true" ]; then
+          echo "有新更新: 是" >> SYNC_STATUS.md
+        else
+          echo "有新更新: 否" >> SYNC_STATUS.md
+        fi
+
+    - name: Commit status file
+      if: always()
+      run: |
+        git checkout main
+        git add SYNC_STATUS.md 2>/dev/null || true
+        if git diff --cached --quiet; then
+          echo "状态文件无更新"
+        else
+          git commit -m "更新同步状态: $(date -u)" || echo "状态文件提交失败"
+        fi
+
+    - name: Push changes
+      run: |
+        git checkout main
+        git push origin main
+
+        # 推送sync-data分支
+        if git show-ref --verify --quiet "refs/heads/sync-data"; then
+          git push origin sync-data || echo "sync-data分支推送失败"
+        fi
+
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "⚠️ 同步失败!"
+        echo "仓库: ${{ github.repository }}"
+        echo "运行编号: ${{ github.run_number }}"
+        echo "失败时间: $(date -u)"
+
+    - name: Notify on success with changes
+      if: success() && steps.check-changes.outputs.has_changes == 'true'
+      run: |
+        echo "✅ 同步成功，发现新更新!"
+        echo "仓库: ${{ github.repository }}"
+        echo "更新时间: $(date -u)"
+        echo "请检查sync-data分支并手动合并到main分支"
+
+    - name: Final status
+      if: always()
+      run: |
+        echo "=== 同步工作流完成 ==="
+        echo "状态: ${{ job.status }}"
+        echo "总运行时间: ${{ job.status }}"
