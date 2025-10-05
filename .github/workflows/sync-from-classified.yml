@@ -123,6 +123,7 @@ jobs:
     - name: Commit status file
       if: always()
       run: |
+        git rm -f sync.log 2>/dev/null || true
         git checkout main
         git add SYNC_STATUS.md 2>/dev/null || true
         if git diff --cached --quiet; then
