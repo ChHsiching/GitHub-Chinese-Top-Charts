@@ -199,10 +199,11 @@ while IFS= read -r line; do
         updated=$(echo "$line" | cut -d'|' -f7 | tr -d ' ')
 
         # 从repo部分解析出repo_name和repo_url
-        if [[ $repo_part =~ ^\[([^\]]+)\]\(([^)]+)\)$ ]]; then
-            repo_name="${BASH_REMATCH[1]}"
-            repo_url="${BASH_REMATCH[2]}"
-        else
+        repo_name=$(echo "$repo_part" | sed 's/^\[//; s/\].*$//')
+        repo_url=$(echo "$repo_part" | sed 's/^.*(\(.*\))/\1/')
+
+        # 验证解析结果
+        if [[ -z "$repo_name" || -z "$repo_url" ]]; then
             continue
         fi
 
