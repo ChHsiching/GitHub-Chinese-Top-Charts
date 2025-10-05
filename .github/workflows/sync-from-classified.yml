@@ -95,11 +95,16 @@ jobs:
       id: check-changes
       run: |
         if git show-ref --verify --quiet "refs/heads/sync-data"; then
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-          echo "检测到sync-data分支有更改"
+          if git log --oneline main..sync-data | grep -q "."; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "检测到sync-data分支有新的更改"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "sync-data分支存在但没有新的更改"
+          fi
         else
           echo "has_changes=false" >> $GITHUB_OUTPUT
-          echo "sync-data分支不存在或无更改"
+          echo "sync-data分支不存在"
         fi
 
     - name: Create sync status badge
@@ -124,6 +129,29 @@ jobs:
           echo "状态文件无更新"
         else
           git commit -m "更新同步状态: $(date -u)" || echo "状态文件提交失败"
+        fi
+
+    - name: Merge sync-data to main
+      if: steps.check-changes.outputs.has_changes == 'true'
+      run: |
+        echo "=== 合并sync-data分支到main分支 ==="
+        git checkout main
+
+        # 合并sync-data分支
+        if git merge --no-ff sync-data -m "自动合并Classified数据同步: $(date '+%Y-%m-%d %H:%M:%S')" --allow-unrelated-histories; then
+          echo "合并成功"
+        else
+          echo "合并存在冲突，尝试解决..."
+
+          # 显示冲突状态
+          echo "冲突文件："
+          git diff --name-only --diff-filter=U
+
+          # 解决冲突：优先采用sync-data分支版本
+          git checkout --theirs .
+          git add .
+          git commit -m "自动合并Classified数据同步(解决冲突): $(date '+%Y-%m-%d %H:%M:%S')"
+          echo "冲突已解决，采用sync-data分支版本"
         fi
 
     - name: Push changes
