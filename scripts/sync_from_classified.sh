@@ -191,7 +191,7 @@ while IFS= read -r line; do
     elif [[ $line =~ ^\|\s*:-.*\|$ ]]; then
         # 表格分隔行
         echo "$line" >> "$TEMP_DATA_FILE"
-    elif [[ $line =~ ^\|\s*\[.*\]\(.*\)\s*\|\s*.*\|\s*.*\|\s*.*\|\s*.*\|$ ]]; then
+    elif [[ $line =~ ^\|\s*[0-9]+\s*\|\s*\[.*\]\(.*\)\s*\|.*\|.*\|.*\|.*\|$ ]]; then
         # 数据行，需要转换格式
         if [[ $in_table == true ]]; then
             # 解析数据行
