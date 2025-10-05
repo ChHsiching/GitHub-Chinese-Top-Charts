@@ -57,10 +57,10 @@ jobs:
         if [ -d "GitHub-Chinese-Top-Charts-Classified" ]; then
           echo "Classified仓库已存在，更新..."
           cd GitHub-Chinese-Top-Charts-Classified
-          git pull https://${{ secrets.GH_TOKEN }}@github.com/kon9chunkit/GitHub-Chinese-Top-Charts-Classified.git main
+          git pull https://${{ secrets.GH_TOKEN }}@github.com/ChHsiching/GitHub-Chinese-Top-Charts-Classified.git main
         else
           echo "克隆Classified仓库..."
-          git clone https://${{ secrets.GH_TOKEN }}@github.com/kon9chunkit/GitHub-Chinese-Top-Charts-Classified.git
+          git clone https://${{ secrets.GH_TOKEN }}@github.com/ChHsiching/GitHub-Chinese-Top-Charts-Classified.git
         fi
         echo "Classified仓库检出完成"
 
