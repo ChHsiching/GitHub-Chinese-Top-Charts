@@ -91,7 +91,10 @@ if [[ ! -d ".git" ]]; then
 fi
 
 # 检查Git工作目录是否干净
-if [[ -n "$(git status --porcelain)" ]]; then
+STATUS_OUTPUT=$(git status --porcelain)
+# 过滤掉sync.log文件
+FILTERED_STATUS=$(echo "$STATUS_OUTPUT" | grep -v "?? sync.log" || true)
+if [[ -n "$FILTERED_STATUS" ]]; then
     handle_error "工作目录不干净，请先提交或暂存更改"
 fi
 
