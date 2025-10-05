@@ -209,11 +209,11 @@ while IFS= read -r line; do
 
         # 格式转换
         formatted_stars=$(format_stars "$stars")
-        formatted_date=$(format_date "$updated")
+        # 保持原始日期格式 YYYY-MM-DD
         simplified_desc=$(simplify_description "$description")
 
         # 重新构建行
-        new_line="|$rank|[$repo_name]($repo_url)|$simplified_desc|$formatted_stars|$language|$formatted_date|"
+        new_line="|$rank|[$repo_name]($repo_url)|$simplified_desc|$formatted_stars|$language|$updated|"
         echo "$new_line" >> "$TEMP_DATA_FILE"
 
         row_count=$((row_count + 1))
@@ -225,11 +225,15 @@ done < "$CLASSIFIED_DATA_PATH"
 
 log "数据转换完成，共处理 $row_count 个项目"
 
-# 更新README.md的All Language部分
-log "更新README.md的All Language部分..."
+# 分割数据并更新README.md
+log "分割数据并更新README.md..."
 
 # 读取当前README.md内容
 README_CONTENT=$(cat README.md)
+
+# 更新README.md开头的"最近更新时间"
+CURRENT_DATE=$(date '+%Y年%m月%d日')
+README_CONTENT=$(echo "$README_CONTENT" | sed "s/最近更新时间为.*月.*日/最近更新时间为$CURRENT_DATE/")
 
 # 找到All Language部分的开始和结束
 ALL_LANG_START=$(echo "$README_CONTENT" | grep -n "^## All Language$" | cut -d: -f1)
@@ -247,20 +251,37 @@ else
     ALL_LANG_END=$((ALL_LANG_START + ALL_LANG_END - 1))
 fi
 
-# 构建新的README.md内容
-log "构建新的README.md内容..."
+# 分割数据：前50个在README.md，其余的在README-Part2.md
+HEAD_COUNT=50
+TEMP_DATA_FILE_PART2="$TEMP_DIR/converted_data_part2.md"
 
-# 保留All Language之前的内容
+# 提取表头
+head -n 2 "$TEMP_DATA_FILE" > "$TEMP_DATA_FILE_PART2"
+
+# 提取数据并分割
+TOTAL_TABLE_LINES=$(tail -n +3 "$TEMP_DATA_FILE" | wc -l)
+MAIN_TABLE_LINES=$(tail -n +3 "$TEMP_DATA_FILE" | head -n $HEAD_COUNT)
+PART2_TABLE_LINES=$(tail -n +3 "$TEMP_DATA_FILE" | tail -n +$((HEAD_COUNT + 1)))
+
+# 构建README.md
+log "构建README.md..."
 HEAD_CONTENT=$(echo "$README_CONTENT" | head -n $((ALL_LANG_START - 1)))
 
-# 添加All Language标题
+# 更新HEAD_CONTENT中的时间
+HEAD_CONTENT=$(echo "$HEAD_CONTENT" | sed "s/最近更新时间为.*月.*日/最近更新时间为$CURRENT_DATE/")
+
 echo "$HEAD_CONTENT" > README.md
 echo "" >> README.md
 echo "## All Language" >> README.md
 echo "" >> README.md
 
-# 添加转换后的表格
-cat "$TEMP_DATA_FILE" >> README.md
+# 添加表头和前50个数据
+head -n 2 "$TEMP_DATA_FILE" >> README.md
+echo "$MAIN_TABLE_LINES" >> README.md
+
+# 添加指向README-Part2.md的链接
+echo "" >> README.md
+echo "查看完整榜单请访问：[README-Part2.md](README-Part2.md)" >> README.md
 
 # 保留All Language之后的内容（如果存在）
 TAIL_START=$((ALL_LANG_END + 1))
@@ -271,7 +292,18 @@ if [[ $TAIL_START -le $TOTAL_LINES ]]; then
     echo "$README_CONTENT" | tail -n +$TAIL_START >> README.md
 fi
 
-log "README.md更新完成"
+# 构建README-Part2.md
+log "构建README-Part2.md..."
+echo "# 一个README容纳不下，第二个README接上" > README-Part2.md
+echo "" >> README-Part2.md
+echo "## All Language (继续)" >> README-Part2.md
+echo "" >> README-Part2.md
+
+# 添加表头和剩余数据
+cat "$TEMP_DATA_FILE_PART2" >> README-Part2.md
+echo "$PART2_TABLE_LINES" >> README-Part2.md
+
+log "README.md和README-Part2.md更新完成"
 
 # 确保没有sync.log文件
 if [ -f "sync.log" ]; then

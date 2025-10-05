@@ -1,9 +1,9 @@
 name: Sync from Classified Repository
 
 on:
-  # 定时触发 - 每24小时执行一次 (UTC 6:00 = 北京时间 14:00)
+  # 定时触发 - 每周一执行一次 (UTC 6:00 = 北京时间 14:00)
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 6 * * 1'
 
   # 手动触发
   workflow_dispatch:
