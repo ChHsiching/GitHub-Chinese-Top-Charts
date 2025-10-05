@@ -190,27 +190,34 @@ echo "|:-|:-|:-|:-|:-|:-|" >> "$TEMP_DATA_FILE"
 while IFS= read -r line; do
     if [[ $line =~ ^\|\s*[0-9]+\s*\|\s*\[.*\]\(.*\)\s*\|.*\|.*\|.*\|.*\|$ ]]; then
         # 数据行，需要转换格式
-        # 解析数据行
-        repo_info=$(echo "$line" | sed -E 's/^\|\s*([0-9]+)\s*\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]+)\s*\|\s*([^|]+)\s*\|\s*([^|]+)\s*\|\s*([^|]+)\s*\|\s*$/\1|\2|\3|\4|\5|\6|\7/')
+        # 使用cut解析数据行
+        rank=$(echo "$line" | cut -d'|' -f2 | tr -d ' ')
+        repo_part=$(echo "$line" | cut -d'|' -f3)
+        description=$(echo "$line" | cut -d'|' -f4)
+        stars=$(echo "$line" | cut -d'|' -f5 | tr -d ' ')
+        language=$(echo "$line" | cut -d'|' -f6 | tr -d ' ')
+        updated=$(echo "$line" | cut -d'|' -f7 | tr -d ' ')
 
-        if [[ $? -eq 0 ]]; then
-            IFS='|' read -r rank repo_name repo_url description stars language updated <<< "$repo_info"
-
-            # 格式转换
-            formatted_stars=$(format_stars "$stars")
-            formatted_date=$(format_date "$updated")
-            simplified_desc=$(simplify_description "$description")
-
-            # 重新构建行
-            new_line="|$rank|[$repo_name]($repo_url)|$simplified_desc|$formatted_stars|$language|$formatted_date|"
-            echo "$new_line" >> "$TEMP_DATA_FILE"
-
-            row_count=$((row_count + 1))
-            if [[ $((row_count % 10)) -eq 0 ]]; then
-                log "已处理 $row_count 个项目..."
-            fi
+        # 从repo部分解析出repo_name和repo_url
+        if [[ $repo_part =~ ^\[([^\]]+)\]\(([^)]+)\)$ ]]; then
+            repo_name="${BASH_REMATCH[1]}"
+            repo_url="${BASH_REMATCH[2]}"
         else
-            echo "解析失败，保持原行: $line" >> "$TEMP_DATA_FILE"
+            continue
+        fi
+
+        # 格式转换
+        formatted_stars=$(format_stars "$stars")
+        formatted_date=$(format_date "$updated")
+        simplified_desc=$(simplify_description "$description")
+
+        # 重新构建行
+        new_line="|$rank|[$repo_name]($repo_url)|$simplified_desc|$formatted_stars|$language|$formatted_date|"
+        echo "$new_line" >> "$TEMP_DATA_FILE"
+
+        row_count=$((row_count + 1))
+        if [[ $((row_count % 10)) -eq 0 ]]; then
+            log "已处理 $row_count 个项目..."
         fi
     fi
 done < "$CLASSIFIED_DATA_PATH"
