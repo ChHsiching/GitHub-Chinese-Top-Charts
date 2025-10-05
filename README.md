@@ -18,7 +18,7 @@
 
 #### 榜单更新频率
 
-- 每周更新一次，最近更新时间为10月30日；
+- 每周更新一次，最近更新时间为2025年10月05日；
 
 #### License
 
@@ -53,315 +53,62 @@
 
 <br/>
 
-
 ## All Language
 
 |#|Repository|Description|Stars|Language|Updated|
 |:-|:-|:-|:-|:-|:-|
-|1|[CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes)|:books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计、Java、Python、C++|113.6k|Java|10/29|
-|2|[jackfrued/Python-100-Days](https://github.com/jackfrued/Python-100-Days)|Python - 100天从新手到大师|94.7k|Python|10/22|
-|3|[Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide)|「Java学习+面试指南」一份涵盖大部分Java程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！|90.7k|Java|10/29|
-|4|[justjavac/free-programming-books-zh_CN](https://github.com/justjavac/free-programming-books-zh_CN)|:books: 免费的计算机编程类中文书籍，欢迎投稿|70.8k|-|09/04|
-|5|[labuladong/fucking-algorithm](https://github.com/labuladong/fucking-algorithm)|刷算法全靠套路，认准 labuladong 就够了！English version supported! Crack LeetCode, not only how, but also why. |67.9k|-|10/29|
-|6|[MisterBooo/LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation)|Demonstrate all the questions on LeetCode in the form of animation.（用动画的形式呈现解LeetCode题目的思路）|60.3k|Java|09/30|
-|7|[doocs/advanced-java](https://github.com/doocs/advanced-java)|😮 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识，后端同学必看，前端同学也可学习|49.1k|Java|10/28|
-|8|[xingshaocheng/architect-awesome](https://github.com/xingshaocheng/architect-awesome)|后端架构师技术图谱|47.9k|-|08/25|
-|9|[macrozheng/mall](https://github.com/macrozheng/mall)|mall项目是一套电商系统，包括前台商城系统及后台管理系统，基于SpringBoot+MyBatis实现，采用Docker容器化部署。 前台商城系统包含首页门户、商品推荐、商品搜索、商品展示、购物车、订单流程、会员中心、客户服务、帮助中心等模块。 后台管理系统包含商品管理、订单管理、会员管理、促销管理、运营管理、内容管理、统计报表、财务管理、权限管理、设置等模块。|42.8k|Java|10/29|
-|10|[scutan90/DeepLearning-500-questions](https://github.com/scutan90/DeepLearning-500-questions)|深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。 全书分为18个章节，50余万字。由于水平有限，书中不妥之处恳请广大读者批评指正。   未完待续............ 如有意合作，联系scutjy2015@163.com                     版权所有，违权必究       Tan 2018.06|41.2k|JavaScript|10/29|
-|11|[azl397985856/leetcode](https://github.com/azl397985856/leetcode)| LeetCode Solutions: A Record of My Problem Solving Journey.( leetcode题解，记录自己的leetcode解题之路。)|37.5k|JavaScript|10/29|
-|12|[bailicangdu/vue2-elm](https://github.com/bailicangdu/vue2-elm)|基于 vue2 + vuex 构建一个具有 45 个页面的大型单页面应用|34.7k|Vue|09/27|
-|13|[521xueweihan/HelloGitHub](https://github.com/521xueweihan/HelloGitHub)|:octocat: Find pearls on open-source seashore 分享 GitHub 上有趣、入门级的开源项目|34.4k|Python|10/28|
-|14|[justjavac/awesome-wechat-weapp](https://github.com/justjavac/awesome-wechat-weapp)|微信小程序开发资源汇总 :100:|33.2k|-|10/28|
-|15|[chinese-poetry/chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)|The most comprehensive database of Chinese poetry 🧶最全中华古诗词数据库,  唐宋两朝近一万四千古诗人,  接近5.5万首唐诗加26万宋诗.  两宋时期1564位词人，21050首词。    阿里招 Python P6/P7 上海张江, gaojunqi@outlook.com|30.1k|JavaScript|10/29|
-|16|[0voice/interview_internal_reference](https://github.com/0voice/interview_internal_reference)|2020年最新总结，阿里，腾讯，百度，美团，头条等技术面试题目，以及答案，专家出题人分析汇总。|29.2k|Python|10/17|
-|17|[testerSunshine/12306](https://github.com/testerSunshine/12306)|12306智能刷票，订票|28.8k|Python|09/26|
-|18|[apachecn/AiLearning](https://github.com/apachecn/AiLearning)|AiLearning: 机器学习 - MachineLearning - ML、深度学习 - DeepLearning - DL、自然语言处理 NLP|27.6k|Python|10/27|
-|19|[xitu/gold-miner](https://github.com/xitu/gold-miner)|🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：|27.4k|-|10/29|
-|20|[NervJS/taro](https://github.com/NervJS/taro)|开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5 等应用。  https://taro.jd.com/|27.3k|JavaScript|10/30|
-|21|[dcloudio/uni-app](https://github.com/dcloudio/uni-app)|uni-app 是使用 Vue 语法开发小程序、H5、App的统一框架|26.5k|JavaScript|10/29|
-|22|[Alvin9999/new-pac](https://github.com/Alvin9999/new-pac)|科学上网/自由上网/翻墙/软件/方法，一键翻墙浏览器，免费shadowsocks/ss/ssr/v2ray/goflyway账号/节点分享，vps一键搭建脚本/教程|26.2k|-|09/27|
-|23|[shengxinjing/programmer-job-blacklist](https://github.com/shengxinjing/programmer-job-blacklist)|:see_no_evil:程序员找工作黑名单，换工作和当技术合伙人需谨慎啊 更新有赞|25.8k|Shell|07/03|
-|24|[kon9chunkit/GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)|:cn: GitHub中文排行榜，帮助你发现高分优秀中文项目、更高效地吸收国人的优秀经验成果；榜单每周更新一次，敬请关注！|25.7k|Java|10/24|
-|25|[fighting41love/funNLP](https://github.com/fighting41love/funNLP)|中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取 ...|25.6k|Python|10/02|
-|26|[proxyee-down-org/proxyee-down](https://github.com/proxyee-down-org/proxyee-down)|http下载工具，基于http代理，支持多连接分块下载|25.5k|Java|08/11|
-|27|[houshanren/hangzhou_house_knowledge](https://github.com/houshanren/hangzhou_house_knowledge)|2017年买房经历总结出来的买房购房知识分享给大家，希望对大家有所帮助。买房不易，且买且珍惜。Sharing the knowledge of buy an own house that according  to the experience at hangzhou in 2017 to all the people. It's not easy to buy a own house, so I hope that it would be useful to everyone.|24.5k|CSS|10/18|
-|28|[fxsjy/jieba](https://github.com/fxsjy/jieba)|结巴中文分词|24.5k|Python|07/24|
-|29|[ityouknow/spring-boot-examples](https://github.com/ityouknow/spring-boot-examples)|about learning Spring Boot via examples. Spring Boot 教程、技术栈示例代码，快速简单上手教程。 |23.9k|Java|10/19|
-|30|[alibaba/arthas](https://github.com/alibaba/arthas)|Alibaba Java Diagnostic Tool Arthas/Alibaba Java诊断利器Arthas|23.5k|Java|10/29|
-|31|[unknwon/the-way-to-go_ZH_CN](https://github.com/unknwon/the-way-to-go_ZH_CN)|《The Way to Go》中文译本，中文正式名《Go 入门指南》|23.4k|Go|10/22|
-|32|[lib-pku/libpku](https://github.com/lib-pku/libpku)|贵校课程资料民间整理|22.9k|TeX|06/28|
-|33|[ctripcorp/apollo](https://github.com/ctripcorp/apollo)|Apollo（阿波罗）是携程框架部门研发的分布式配置中心，能够集中化管理应用不同环境、不同集群的配置，配置修改后能够实时推送到应用端，并且具备规范的权限、流程治理等特性，适用于微服务配置管理场景。|22.7k|Java|10/24|
-|34|[sentsin/layui](https://github.com/sentsin/layui)|采用自身模块规范编写的前端 UI 框架，遵循原生 HTML/CSS/JS 的书写形式，极低门槛，拿来即用。|22.6k|JavaScript|10/02|
-|35|[formulahendry/955.WLB](https://github.com/formulahendry/955.WLB)|955 不加班的公司名单 - 工作 955，work–life balance (工作与生活的平衡)|22.6k|-|10/11|
-|36|[alibaba/druid](https://github.com/alibaba/druid)|阿里巴巴计算平台事业部出品，为监控而生的数据库连接池|22.5k|Java|10/25|
-|37|[alibaba/flutter-go](https://github.com/alibaba/flutter-go)|flutter 开发者帮助 APP，包含 flutter 常用 140+ 组件的demo 演示与中文文档|22.1k|Dart|10/13|
-|38|[scwang90/SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout)|🔥下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer。|21.7k|Java|10/18|
-|39|[hankcs/HanLP](https://github.com/hankcs/HanLP)|中文分词 词性标注 命名实体识别 依存句法分析 语义依存分析 新词发现 关键词短语提取 自动摘要 文本分类聚类 拼音简繁转换 自然语言处理|21.1k|Python|10/29|
-|40|[littlecodersh/ItChat](https://github.com/littlecodersh/ItChat)|A complete and graceful API for Wechat. 微信个人号接口、微信机器人及命令行微信，三十行即可自定义个人号机器人。|20.9k|Python|10/28|
-|41|[Advanced-Frontend/Daily-Interview-Question](https://github.com/Advanced-Frontend/Daily-Interview-Question)|我是木易杨，公众号「高级前端进阶」作者，每天搞定一道前端大厂面试题，祝大家天天进步，一年后会看到不一样的自己。|20.8k|JavaScript|05/27|
-|42|[Tencent/wepy](https://github.com/Tencent/wepy)|小程序组件化开发框架|20.8k|JavaScript|10/04|
-|43|[mqyqingfeng/Blog](https://github.com/mqyqingfeng/Blog)|冴羽写博客的地方，预计写四个系列：JavaScript深入系列、JavaScript专题系列、ES6系列、React系列。|20.3k|-|07/21|
-|44|[jobbole/awesome-python-cn](https://github.com/jobbole/awesome-python-cn)|Python资源大全中文版，包括：Web框架、网络爬虫、模板引擎、数据库、数据可视化、图片处理等，由伯乐在线持续更新。|20.2k|Makefile|10/13|
-|45|[Meituan-Dianping/mpvue](https://github.com/Meituan-Dianping/mpvue)|基于 Vue.js 的小程序开发框架，从底层支持 Vue.js 语法和构建工具体系。|20.1k|JavaScript|09/09|
-|46|[googlehosts/hosts](https://github.com/googlehosts/hosts)|镜像：https://scaffrey.coding.net/p/hosts/git / https://git.qvq.network/googlehosts/hosts|19.9k|-|08/26|
-|47|[AobingJava/JavaFamily](https://github.com/AobingJava/JavaFamily)|【Java面试+Java学习指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。|19.8k|-|10/15|
-|48|[SwiftGGTeam/the-swift-programming-language-in-chinese](https://github.com/SwiftGGTeam/the-swift-programming-language-in-chinese)|中文版 Apple 官方 Swift 教程《The Swift Programming Language》|19.8k|CSS|10/25|
-|49|[byoungd/English-level-up-tips-for-Chinese](https://github.com/byoungd/English-level-up-tips-for-Chinese)|可能是让你受益匪浅的英语进阶指南|19.7k|-|08/10|
-|50|[geekxh/hello-algorithm](https://github.com/geekxh/hello-algorithm)|🌍 东半球最酷的学习项目   1、我写的三十万字算法图解 2、千本开源电子书 3、100 张思维导图 4、100 篇大厂面经 5、30 个学习专题  🚀 🚀 🚀 右上角点个 star，加入我们万人学习群！English Supported！|19.7k|Java|10/25|
-|51|[FallibleInc/security-guide-for-developers](https://github.com/FallibleInc/security-guide-for-developers)|Security Guide for Developers (实用性开发人员安全须知)|19.3k|-|10/02|
-|52|[kataras/iris](https://github.com/kataras/iris)|The fastest HTTP/2 Go Web Framework. AWS Lambda, gRPC, MVC, Unique Router, Websockets, Sessions, Test suite, Dependency Injection and more. A true successor of expressjs and laravel   谢谢 https://github.com/kataras/iris/issues/1329  |19.3k|Go|10/19|
-|53|[fengdu78/Coursera-ML-AndrewNg-Notes](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)|吴恩达老师的机器学习课程个人笔记|19.3k|HTML|10/28|
-|54|[QSCTech/zju-icicles](https://github.com/QSCTech/zju-icicles)|浙江大学课程攻略共享计划|19.2k|HTML|10/24|
-|55|[lenve/vhr](https://github.com/lenve/vhr)|微人事是一个前后端分离的人力资源管理系统，项目采用SpringBoot+Vue开发。|19.0k|Java|10/15|
-|56|[d2l-ai/d2l-zh](https://github.com/d2l-ai/d2l-zh)|《动手学深度学习》：面向中文读者、能运行、可讨论。英文版即伯克利“深度学习导论”教材。|19.0k|Python|10/29|
-|57|[bannedbook/fanqiang](https://github.com/bannedbook/fanqiang)|翻墙-科学上网|18.9k|Rich Text Format|10/25|
-|58|[ruanyf/es6tutorial](https://github.com/ruanyf/es6tutorial)|《ECMAScript 6入门》是一本开源的 JavaScript 语言教程，全面介绍 ECMAScript 6 新增的语法特性。|18.7k|JavaScript|10/27|
-|59|[xkcoding/spring-boot-demo](https://github.com/xkcoding/spring-boot-demo)|spring boot demo 是一个用来深度学习并实战 spring boot 的项目，目前总共包含 65 个集成demo，已经完成 53 个。  该项目已成功集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate(通用JDBC操作数据库)、JPA(强大的ORM框架)、mybatis(强大的ORM框架)、通用Mapper(快速操作Mybati ...|18.6k|Java|10/27|
-|60|[YMFE/yapi](https://github.com/YMFE/yapi)|YApi 是一个可本地部署的、打通前后端及QA的、可视化的接口管理平台|18.3k|JavaScript|10/26|
-|61|[komeiji-satori/Dress](https://github.com/komeiji-satori/Dress)|好耶  是女装|18.3k|Standard ML|10/29|
-|62|[hollischuang/toBeTopJavaer](https://github.com/hollischuang/toBeTopJavaer)|To Be Top Javaer - Java工程师成神之路|17.9k|Java|10/25|
-|63|[davideuler/architecture.of.internet-product](https://github.com/davideuler/architecture.of.internet-product)|互联网公司技术架构，微信/淘宝/微博/腾讯/阿里/美团点评/百度/Google/Facebook/Amazon/eBay的架构，欢迎PR补充|17.9k|-|10/24|
-|64|[Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)|网易云音乐 Node.js API service|17.5k|JavaScript|10/29|
-|65|[TeamStuQ/skill-map](https://github.com/TeamStuQ/skill-map)|程序员技能图谱|17.4k|HTML|08/28|
-|66|[alibaba/easyexcel](https://github.com/alibaba/easyexcel)|快速、简单避免OOM的java处理Excel工具|17.4k|Java|10/27|
-|67|[zhaoolee/ChromeAppHeroes](https://github.com/zhaoolee/ChromeAppHeroes)|🌈谷粒-Chrome插件英雄榜, 为优秀的Chrome插件写一本中文说明书, 让Chrome插件英雄们造福人类~  ChromePluginHeroes, Write a Chinese manual for the excellent Chrome plugin, let the Chrome plugin heroes benefit the human~ 公众号「0加1」同步更新|17.2k|JavaScript|10/26|
-|68|[qiurunze123/miaosha](https://github.com/qiurunze123/miaosha)|⭐⭐⭐⭐秒杀系统设计与实现.互联网工程师进阶与分析🙋🐓|17.2k|Java|10/19|
-|69|[wuyouzhuguli/SpringAll](https://github.com/wuyouzhuguli/SpringAll)|循序渐进，学习Spring Boot、Spring Boot & Shiro、Spring Batch、Spring Cloud、Spring Cloud Alibaba、Spring Security & Spring Security OAuth2，博客Spring系列源码：https://mrbird.cc|17.1k|Java|05/13|
-|70|[halo-dev/halo](https://github.com/halo-dev/halo)|✍  An excellent open source blog publishing application.   一个优秀的开源博客发布应用。|17.1k|Java|10/30|
-|71|[wangzheng0822/algo](https://github.com/wangzheng0822/algo)|数据结构和算法必知必会的50个代码实现|16.9k|Python|10/29|
-|72|[zhangdaiscott/jeecg-boot](https://github.com/zhangdaiscott/jeecg-boot)|基于代码生成器的低代码平台，超越传统商业平台！前后端分离架构：SpringBoot 2.x，SpringCloud Alibaba，Ant Design&Vue，Mybatis-plus，Shiro，JWT。强大的代码生成器让前后端代码一键生成，无需写任何代码! 引领新开发模式(OnlineCoding-> 代码生成-> 手工MERGE)，帮助Java项目解决70%重复工作，让开发更关注业务逻辑，既能快速提高开发效率，帮助公司节省成本，同时又不失灵活性。|16.8k|Java|10/29|
-|73|[judasn/IntelliJ-IDEA-Tutorial](https://github.com/judasn/IntelliJ-IDEA-Tutorial)|IntelliJ IDEA 简体中文专题教程|16.8k|-|10/12|
-|74|[wenyan-lang/wenyan](https://github.com/wenyan-lang/wenyan)|文言文編程語言 A programming language for the ancient Chinese.|16.7k|TypeScript|08/09|
-|75|[alibaba/canal](https://github.com/alibaba/canal)|阿里巴巴 MySQL binlog 增量订阅&消费组件 |16.3k|Java|10/29|
-|76|[reactnativecn/react-native-guide](https://github.com/reactnativecn/react-native-guide)|React Native指南汇集了各类react-native学习资源、开源App和组件|16.2k|-|07/27|
-|77|[xuxueli/xxl-job](https://github.com/xuxueli/xxl-job)|A distributed task scheduling framework.（分布式任务调度平台XXL-JOB）|16.1k|Java|10/29|
-|78|[1c7/chinese-independent-developer](https://github.com/1c7/chinese-independent-developer)|👩🏿‍💻👨🏾‍💻👩🏼‍💻👨🏽‍💻👩🏻‍💻中国独立开发者项目列表 -- 分享大家都在做什么|16.0k|-|10/28|
-|79|[alsotang/node-lessons](https://github.com/alsotang/node-lessons)|:closed_book:《Node.js 包教不包会》 by alsotang|16.0k|JavaScript|06/10|
-|80|[MLEveryday/100-Days-Of-ML-Code](https://github.com/MLEveryday/100-Days-Of-ML-Code)|100-Days-Of-ML-Code中文版|15.9k|Jupyter Notebook|02/18|
-|81|[didi/DoraemonKit](https://github.com/didi/DoraemonKit)|A full-featured App (iOS & Android) development assistant. You deserve it.  简称 "DoKit" 。一款功能齐全的客户端（ iOS 、Android、微信小程序 ）研发助手，你值得拥有。https://www.dokit.cn/|15.8k|Java|10/29|
-|82|[Awesome-HarmonyOS/HarmonyOS](https://github.com/Awesome-HarmonyOS/HarmonyOS)|A curated list of awesome things related to HarmonyOS. 华为鸿蒙操作系统。|15.8k|C|09/15|
-|83|[alibaba/ice](https://github.com/alibaba/ice)|🚀  Simple and friendly front-end development system（飞冰，简单而友好的前端研发体系 ）https://ice.work/|15.8k|JavaScript|10/29|
-|84|[shuzheng/zheng](https://github.com/shuzheng/zheng)|基于Spring+SpringMVC+Mybatis分布式敏捷开发系统架构，提供整套公共微服务服务模块：集中权限管理（单点登录）、内容管理、支付中心、用户管理（支持第三方登录）、微信平台、存储系统、配置中心、日志分析、任务和通知等，支持服务治理、监控和追踪，努力为中小型企业打造全方位J2EE企业级开发解决方案。|15.7k|Java|10/13|
-|85|[datawhalechina/pumpkin-book](https://github.com/datawhalechina/pumpkin-book)|《机器学习》（西瓜书）公式推导解析，在线阅读地址：https://datawhalechina.github.io/pumpkin-book|15.4k|-|10/27|
-|86|[PKUanonym/REKCARC-TSC-UHT](https://github.com/PKUanonym/REKCARC-TSC-UHT)|清华大学计算机系课程攻略 Guidance for courses in Department of Computer Science and Technology, Tsinghua University|15.3k|HTML|10/16|
-|87|[huihut/interview](https://github.com/huihut/interview)|📚 C/C++ 技术面试基础知识总结，包括语言、程序库、数据结构、算法、系统、网络、链接装载库等知识及面试经验、招聘、内推等信息。This repository is a summary of the basic knowledge of recruiting job seekers and beginners in the direction of C/C++ technology, including language, program library, data structure, algorithm, system, network, link loading library, in ...|15.2k|C++|10/12|
-|88|[chaozh/awesome-blockchain-cn](https://github.com/chaozh/awesome-blockchain-cn)|收集所有区块链(BlockChain)技术开发相关资料，包括Fabric和Ethereum开发资料|15.1k|JavaScript|05/29|
-|89|[CarGuo/GSYVideoPlayer](https://github.com/CarGuo/GSYVideoPlayer)|视频播放器（IJKplayer、ExoPlayer、MediaPlayer），HTTPS，支持弹幕，外挂字幕，支持滤镜、水印、gif截图，片头广告、中间广告，多个同时播放，支持基本的拖动，声音、亮度调节，支持边播边缓存，支持视频自带rotation的旋转（90,270之类），重力旋转与手动旋转的同步支持，支持列表播放 ，列表全屏动画，视频加载速度，列表小窗口支持拖动，动画效果，调整比例，多分辨率切换，支持切换播放器，进度条小窗口预览，列表切换详情页面无缝播放，rtsp、concat、mpeg。 |15.1k|Java|10/26|
-|90|[LingCoder/OnJava8](https://github.com/LingCoder/OnJava8)|《On Java 8》中文版，又名《Java编程思想》 第5版 |14.6k|-|10/27|
-|91|[hzlzh/Best-App](https://github.com/hzlzh/Best-App)|收集&推荐优秀的 Apps/硬件/技巧/周边等|14.6k|-|05/15|
-|92|[linlinjava/litemall](https://github.com/linlinjava/litemall)|又一个小商城。litemall = Spring Boot后端 + Vue管理员前端 + 微信小程序用户前端 + Vue用户移动端|14.5k|Java|10/28|
-|93|[jaywcjlove/linux-command](https://github.com/jaywcjlove/linux-command)|Linux命令大全搜索工具，内容包含Linux命令手册、详解、学习、搜集。https://git.io/linux|14.5k|HTML|10/29|
-|94|[dianping/cat](https://github.com/dianping/cat)|CAT 作为服务端项目基础组件，提供了 Java, C/C++, Node.js, Python, Go 等多语言客户端，已经在美团点评的基础架构中间件框架（MVC框架，RPC框架，数据库框架，缓存框架等，消息队列，配置系统等）深度集成，为美团点评各业务线提供系统丰富的性能指标、健康状况、实时告警等。|14.4k|Java|10/13|
-|95|[ehang-io/nps](https://github.com/ehang-io/nps)|一款轻量级、高性能、功能强大的内网穿透代理服务器。支持tcp、udp、socks5、http等几乎所有流量转发，可用来访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析、内网socks5代理等等……，并带有功能强大的web管理端。a lightweight, high-performance, powerful intranet penetration proxy server, with a powerful web management terminal.|14.4k|Go|10/24|
-|96|[forezp/SpringCloudLearning](https://github.com/forezp/SpringCloudLearning)|《史上最简单的Spring Cloud教程源码》|14.4k|Java|06/10|
-|97|[getlantern/download](https://github.com/getlantern/download)|Lantern官方版本下载 蓝灯 翻墙 代理 科学上网 外网 加速器 梯子 路由 proxy vpn circumvention gfw|14.4k|-|08/15|
-|98|[alibaba/Sentinel](https://github.com/alibaba/Sentinel)|A powerful flow control component enabling reliability, resilience and monitoring for microservices. (面向云原生微服务的高可用流控防护组件)|14.2k|Java|10/29|
-|99|[jumpserver/jumpserver](https://github.com/jumpserver/jumpserver)|JumpServer 是全球首款开源的堡垒机，是符合 4A 的专业运维安全审计系统。|14.2k|Python|10/29|
-|100|[facert/awesome-spider](https://github.com/facert/awesome-spider)|爬虫集合|14.1k|-|08/06|
-|101|[haizlin/fe-interview](https://github.com/haizlin/fe-interview)|前端面试每日 3+1，以面试题来驱动学习，提倡每日学习与思考，每天进步一点！每天早上5点纯手工发布面试题（死磕自己，愉悦大家），3000+道前端面试题全面覆盖，HTML/CSS/JavaScript/Vue/React/Nodejs/TypeScript/ECMAScritpt/Webpack/Jquery/小程序/软技能……|14.0k|JavaScript|10/30|
-|102|[ruanyf/weekly](https://github.com/ruanyf/weekly)|科技爱好者周刊，每周五发布|14.0k|-|10/23|
-|103|[wangshub/wechat_jump_game](https://github.com/wangshub/wechat_jump_game)|微信《跳一跳》Python 辅助|13.9k|Python|10/10|
-|104|[chai2010/advanced-go-programming-book](https://github.com/chai2010/advanced-go-programming-book)|:books: 《Go语言高级编程》开源图书，涵盖CGO、Go汇编语言、RPC实现、Protobuf插件实现、Web框架实现、分布式系统等高阶主题(完稿)|13.8k|Go|10/20|
-|105|[youzan/vant-weapp](https://github.com/youzan/vant-weapp)|轻量、可靠的小程序 UI 组件库|13.7k|JavaScript|10/15|
-|106|[JeffLi1993/springboot-learning-example](https://github.com/JeffLi1993/springboot-learning-example)|spring boot 实践学习案例，是 spring boot 初学者及核心技术巩固的最佳实践。另外写博客，用 OpenWrite。|13.6k|Java|10/13|
-|107|[nndl/nndl.github.io](https://github.com/nndl/nndl.github.io)|《神经网络与深度学习》 邱锡鹏著 Neural Network and Deep Learning |13.5k|HTML|10/22|
-|108|[EastWorld/wechat-app-mall](https://github.com/EastWorld/wechat-app-mall)|微信小程序商城，微信小程序微店|13.4k|JavaScript|10/24|
-|109|[taizilongxu/interview_python](https://github.com/taizilongxu/interview_python)|关于Python的面试题|13.2k|Shell|08/03|
-|110|[PaddlePaddle/Paddle](https://github.com/PaddlePaddle/Paddle)|PArallel Distributed Deep LEarning: Machine Learning Framework from Industrial Practice （『飞桨』核心框架，深度学习&机器学习高性能单机、分布式训练和跨平台部署）|13.2k|Python|10/30|
-|111|[qianguyihao/Web](https://github.com/qianguyihao/Web)|前端入门到进阶图文教程，超详细的Web前端学习笔记。从零开始学前端，做一名精致优雅的前端工程师。公众号「千古壹号」作者。|13.1k|JavaScript|10/23|
-|112|[vnpy/vnpy](https://github.com/vnpy/vnpy)|基于Python的开源量化交易平台开发框架|13.1k|C++|10/30|
-|113|[233boy/v2ray](https://github.com/233boy/v2ray)|最好用的 V2Ray 一键安装脚本 & 管理脚本|13.0k|Shell|09/15|
-|114|[dcloudio/mui](https://github.com/dcloudio/mui)|最接近原生APP体验的高性能框架|13.0k|JavaScript|07/30|
-|115|[easychen/howto-make-more-money](https://github.com/easychen/howto-make-more-money)|程序员如何优雅的挣零花钱，2.0版，升级为小书了。Most of this not work outside China , so no English translate|12.9k|PHP|10/17|
-|116|[ryanhanwu/How-To-Ask-Questions-The-Smart-Way](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)|本文原文由知名 Hacker Eric S. Raymond 所撰寫，教你如何正確的提出技術問題並獲得你滿意的答案。|12.9k|JavaScript|10/25|
-|117|[zergtant/pytorch-handbook](https://github.com/zergtant/pytorch-handbook)|pytorch handbook是一本开源的书籍，目标是帮助那些希望和使用PyTorch进行深度学习开发和研究的朋友快速入门，其中包含的Pytorch教程全部通过测试保证可以成功运行|12.8k|Jupyter Notebook|10/27|
-|118|[fengdu78/lihang-code](https://github.com/fengdu78/lihang-code)|《统计学习方法》的代码实现|12.8k|Jupyter Notebook|09/22|
-|119|[alibaba/ARouter](https://github.com/alibaba/ARouter)|💪 A framework for assisting in the renovation of Android componentization (帮助 Android App 进行组件化改造的路由框架)|12.5k|Java|10/22|
-|120|[Kr1s77/awesome-python-login-model](https://github.com/Kr1s77/awesome-python-login-model)|😮python模拟登陆一些大型网站，还有一些简单的爬虫，希望对你们有所帮助❤️，如果喜欢记得给个star哦🌟|12.4k|Python|10/02|
-|121|[Tencent/QMUI_Android](https://github.com/Tencent/QMUI_Android)|提高 Android UI 开发效率的 UI 库|12.3k|Java|10/28|
-|122|[dyc87112/SpringBoot-Learning](https://github.com/dyc87112/SpringBoot-Learning)|Spring Boot基础教程，Spring Boot 2.x版本连载中！！！|12.3k|Java|09/11|
-|123|[521xueweihan/git-tips](https://github.com/521xueweihan/git-tips)|:trollface:Git的奇技淫巧|12.2k|-|04/14|
-|124|[Bigkoo/Android-PickerView](https://github.com/Bigkoo/Android-PickerView)|This is a picker view for android , support linkage effect, timepicker and optionspicker.（时间选择器、省市区三级联动）|12.2k|Java|10/23|
-|125|[shimohq/chinese-programmer-wrong-pronunciation](https://github.com/shimohq/chinese-programmer-wrong-pronunciation)|中国程序员容易发音错误的单词|12.1k|Python|10/08|
-|126|[fengdu78/deeplearning_ai_books](https://github.com/fengdu78/deeplearning_ai_books)|deeplearning.ai（吴恩达老师的深度学习课程笔记及资源）|12.1k|HTML|09/21|
-|127|[ZhongFuCheng3y/3y](https://github.com/ZhongFuCheng3y/3y)|:notebook:从Java基础、JavaWeb基础到常用的框架再到面试题都有完整的教程，几乎涵盖了Java后端必备的知识点|11.8k|-|10/07|
-|128|[phobal/ivideo](https://github.com/phobal/ivideo)|一个可以观看国内主流视频平台所有视频的客户端（Mac、Windows、Linux） A client that can watch video of domestic(China) mainstream video platform|11.7k|JavaScript|09/04|
-|129|[CarGuo/gsy_github_app_flutter](https://github.com/CarGuo/gsy_github_app_flutter)|Flutter 超完整的开源项目，功能丰富，适合学习和日常使用。GSYGithubApp系列的优势：我们目前已经拥有Flutter、Weex、ReactNative、kotlin 四个版本。 功能齐全，项目框架内技术涉及面广，完成度高，持续维护，配套文章，适合全面学习，对比参考。跨平台的开源Github客户端App，更好的体验，更丰富的功能，旨在更好的日常管理和维护个人Github，提供更好更方便的驾车体验Σ(￣。￣ﾉ)ﾉ。同款Weex版本 ： https://github.com/CarGuo/GSYGithubAppWeex    、同款React Native版本 ： https://g ...|11.6k|Dart|10/22|
-|130|[elunez/eladmin](https://github.com/elunez/eladmin)|项目基于 Spring Boot 2.1.0 、 Jpa、 Spring Security、redis、Vue的前后端分离的后台管理系统，项目采用分模块开发方式， 权限控制采用 RBAC，支持数据字典与数据权限管理，支持一键生成前后端代码，支持动态路由|11.6k|Java|10/27|
-|131|[Jack-Cherish/python-spider](https://github.com/Jack-Cherish/python-spider)|:rainbow:Python3网络爬虫实战：淘宝、京东、网易云、B站、12306、抖音、笔趣阁、漫画小说下载、音乐电影下载等|11.6k|Python|09/25|
-|132|[lin-xin/vue-manage-system](https://github.com/lin-xin/vue-manage-system)|基于vue + element的后台管理系统解决方案|11.4k|Vue|10/19|
-|133|[Tencent/omi](https://github.com/Tencent/omi)| Front End Cross-Frameworks Framework - 前端跨框架跨平台框架|11.4k|JavaScript|09/30|
-|134|[jobbole/awesome-programming-books](https://github.com/jobbole/awesome-programming-books)|经典编程书籍大全，涵盖：计算机系统与网络、系统架构、算法与数据结构、前端开发、后端开发、移动开发、数据库、测试、项目与团队、程序员职业修炼、求职面试等|11.4k|-|10/10|
-|135|[qyuhen/book](https://github.com/qyuhen/book)|学习笔记|11.2k|-|04/02|
-|136|[pjialin/py12306](https://github.com/pjialin/py12306)|🚂 12306 购票助手，支持集群，多账号，多任务购票以及 Web 页面管理 |11.2k|Python|04/08|
-|137|[amfe/lib-flexible](https://github.com/amfe/lib-flexible)|可伸缩布局方案|11.1k|JavaScript|06/19|
-|138|[MustangYM/WeChatExtension-ForMac](https://github.com/MustangYM/WeChatExtension-ForMac)|Mac微信功能拓展/微信插件/微信小助手(A plugin for Mac WeChat)|11.1k|Objective-C|10/29|
-|139|[Tamsiree/RxTool](https://github.com/Tamsiree/RxTool)|Android开发人员不得不收集的工具类集合   支付宝支付   微信支付（统一下单）   微信分享   Zip4j压缩（支持分卷压缩与加密）   一键集成UCrop选择圆形头像   一键集成二维码和条形码的扫描与生成   常用Dialog   WebView的封装可播放视频   仿斗鱼滑动验证码   Toast封装   震动   GPS   Location定位   图片缩放   Exif 图片添加地理位置信息（经纬度）   蛛网等级   颜色选择器   ArcGis   VTPK   编译运行一下说不定会找到惊喜|11.1k|Kotlin|09/18|
-|140|[aalansehaiyang/technology-talk](https://github.com/aalansehaiyang/technology-talk)|汇总java生态圈常用技术框架、开源中间件，系统架构、数据库、大公司架构案例、常用三方类库、项目管理、线上问题排查、个人成长、思考等知识|11.0k|-|06/29|
-|141|[ShusenTang/Dive-into-DL-PyTorch](https://github.com/ShusenTang/Dive-into-DL-PyTorch)|本项目将《动手学深度学习》(Dive into Deep Learning)原书中的MXNet实现改为PyTorch实现。|10.9k|Jupyter Notebook|09/03|
-|142|[jhao104/proxy_pool](https://github.com/jhao104/proxy_pool)|Python爬虫代理IP池(proxy pool)|10.9k|Python|10/26|
-|143|[peterq/pan-light](https://github.com/peterq/pan-light)|百度网盘不限速客户端, golang + qt5, 跨平台图形界面|10.9k|Go|09/10|
-|144|[leisurelicht/wtfpython-cn](https://github.com/leisurelicht/wtfpython-cn)|wtfpython的中文翻译/施工结束/ 能力有限，欢迎帮我改进翻译|10.8k|Python|06/13|
-|145|[yanue/V2rayU](https://github.com/yanue/V2rayU)|V2rayU,基于v2ray核心的mac版客户端,用于科学上网,使用swift编写,支持vmess,shadowsocks,socks5等服务协议,支持订阅, 支持二维码,剪贴板导入,手动配置,二维码分享等|10.8k|-|10/29|
-|146|[JessYanCoding/AndroidAutoSize](https://github.com/JessYanCoding/AndroidAutoSize)|🔥 A low-cost Android screen adaptation solution (今日头条屏幕适配方案终极版，一个极低成本的 Android 屏幕适配方案).|10.7k|Java|07/15|
-|147|[ruanyf/free-books](https://github.com/ruanyf/free-books)|互联网上的免费书籍|10.7k|-|10/27|
-|148|[go-kratos/kratos](https://github.com/go-kratos/kratos)|Kratos是bilibili开源的一套Go微服务框架，包含大量微服务相关框架及工具。|10.6k|Go|10/28|
-|149|[youth5201314/banner](https://github.com/youth5201314/banner)|🔥🔥🔥Banner 2.0 来了！Android广告图片轮播控件，内部基于ViewPager2实现，Indicator和UI都可以自定义。|10.5k|Java|08/25|
-|150|[open-android/Android](https://github.com/open-android/Android)|GitHub上最火的Android开源项目,所有开源项目都有详细资料和配套视频|10.5k|-|10/03|
-|151|[wangeditor-team/wangEditor](https://github.com/wangeditor-team/wangEditor)|wangEditor —— 轻量级web富文本框|10.5k|TypeScript|10/29|
-|152|[meolu/walle-web](https://github.com/meolu/walle-web)|walle - 瓦力 Devops开源项目代码部署平台|10.5k|Python|08/20|
-|153|[dragen1860/Deep-Learning-with-TensorFlow-book](https://github.com/dragen1860/Deep-Learning-with-TensorFlow-book)|深度学习入门开源书，基于TensorFlow 2.0案例实战。Open source Deep Learning book, based on TensorFlow 2.0 framework.|10.4k|Jupyter Notebook|09/24|
-|154|[Tim9Liu9/TimLiu-iOS](https://github.com/Tim9Liu9/TimLiu-iOS)|iOS开发常用三方库、插件、知名博客等等|10.4k|-|07/31|
-|155|[dt-fe/weekly](https://github.com/dt-fe/weekly)|前端精读周刊|10.3k|-|10/26|
-|156|[bailicangdu/node-elm](https://github.com/bailicangdu/node-elm)|基于 node.js + Mongodb 构建的后台系统|10.3k|JavaScript|09/11|
-|157|[hehonghui/android-tech-frontier](https://github.com/hehonghui/android-tech-frontier)|【停止维护】一个定期翻译国外Android优质的技术、开源库、软件架构设计、测试等文章的开源项目|10.3k|-|09/02|
-|158|[greyireland/algorithm-pattern](https://github.com/greyireland/algorithm-pattern)|算法模板，最科学的刷题方式，最快速的刷题路径，你值得拥有~|10.2k|Go|09/20|
-|159|[jeasonlzy/okhttp-OkGo](https://github.com/jeasonlzy/okhttp-OkGo)|OkGo - 3.0 震撼来袭，该库是基于 Http 协议，封装了 OkHttp 的网络请求框架，比 Retrofit 更简单易用，支持 RxJava，RxJava2，支持自定义缓存，支持批量断点下载管理和批量上传管理功能|10.2k|Java|05/09|
-|160|[apachecn/algo-zh](https://github.com/apachecn/algo-zh)|结构化算法刷题训练指南|10.1k|CSS|10/06|
-|161|[bailicangdu/vue2-manage](https://github.com/bailicangdu/vue2-manage)|基于 vue + element-ui 的后台管理系统|10.0k|Vue|08/31|
-|162|[answershuto/learnVue](https://github.com/answershuto/learnVue)|:octocat:Vue.js 源码解析|10.0k|JavaScript|10/19|
-|163|[JessYanCoding/MVPArms](https://github.com/JessYanCoding/MVPArms)|⚔️ A common architecture for Android applications developing based on MVP, integrates many open source projects, to make your developing quicker and easier (一个整合了大量主流开源项目高度可配置化的 Android MVP 快速集成框架). |9.8k|Java|10/20|
-|164|[0voice/from_coder_to_expert](https://github.com/0voice/from_coder_to_expert)|2020年最新总结，从程序员到CTO，从专业走向卓越，分享大牛企业内部pdf与PPT|9.8k|-|07/13|
-|165|[pagehelper/Mybatis-PageHelper](https://github.com/pagehelper/Mybatis-PageHelper)|Mybatis通用分页插件|9.8k|Java|10/13|
-|166|[h2y/Shadowrocket-ADBlock-Rules](https://github.com/h2y/Shadowrocket-ADBlock-Rules)|提供多款 Shadowrocket 规则，带广告过滤功能。用于 iOS 未越狱设备选择性地自动翻墙。|9.7k|Python|10/29|
-|167|[weilanwl/ColorUI](https://github.com/weilanwl/ColorUI)|鲜亮的高饱和色彩，专注视觉的小程序组件库|9.6k|Vue|10/18|
-|168|[zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor)|这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。|9.6k|C++|09/21|
-|169|[xiandanin/magnetW](https://github.com/xiandanin/magnetW)|磁力链接聚合搜索|9.5k|JavaScript|07/23|
-|170|[justauth/JustAuth](https://github.com/justauth/JustAuth)|:100: 小而全而美的第三方登录开源组件。目前已支持Github、Gitee、微博、钉钉、百度、Coding、腾讯云开发者平台、OSChina、支付宝、QQ、微信、淘宝、Google、Facebook、抖音、领英、小米、微软、今日头条、Teambition、StackOverflow、Pinterest、人人、华为、企业微信、酷家乐、Gitlab、美团、饿了么和推特等第三方平台的授权登录。 Login, so easy!|9.5k|Java|10/25|
-|171|[USTC-Resource/USTC-Course](https://github.com/USTC-Resource/USTC-Course)|:heart:中国科学技术大学课程资源|9.5k|C++|10/24|
-|172|[snail007/goproxy](https://github.com/snail007/goproxy)|Proxy is a high performance HTTP(S) proxies, SOCKS5 proxies,WEBSOCKET, TCP, UDP proxy server implemented by golang. Now, it supports chain-style proxies,nat forwarding in different lan,TCP/UDP port forwarding, SSH forwarding.Proxy是golang实现的高性能http,https,websocket,tcp,socks5代理服务器,支持内网穿透,链式代理,通讯加密,智能H ...|9.5k|Go|10/24|
-|173|[LuckSiege/PictureSelector](https://github.com/LuckSiege/PictureSelector)|Picture Selector Library for Android  or 图片选择器|9.4k|Java|10/29|
-|174|[yujiangshui/A-Programmers-Guide-to-English](https://github.com/yujiangshui/A-Programmers-Guide-to-English)|专为程序员编写的英语学习指南 v1.2。在线版本请点 ->|9.4k|-|08/29|
-|175|[seaswalker/spring-analysis](https://github.com/seaswalker/spring-analysis)|Spring源码阅读|9.2k|Java|10/13|
-|176|[shengqiangzhang/examples-of-web-crawlers](https://github.com/shengqiangzhang/examples-of-web-crawlers)|一些非常有趣的python爬虫例子,对新手比较友好,主要爬取淘宝、天猫、微信、豆瓣、QQ等网站。(Some interesting examples of python crawlers that are friendly to beginners. )|9.2k|Python|05/15|
-|177|[modood/Administrative-divisions-of-China](https://github.com/modood/Administrative-divisions-of-China)|中华人民共和国行政区划：省级（省份直辖市自治区）、 地级（城市）、 县级（区县）、 乡级（乡镇街道）、 村级（村委会居委会） ，中国省市区镇村二级三级四级五级联动地址数据。|9.1k|JavaScript|07/30|
-|178|[frank-lam/fullstack-tutorial](https://github.com/frank-lam/fullstack-tutorial)|🚀 fullstack tutorial 2020，后台技术栈/架构师之路/全栈开发社区，春招/秋招/校招/面试|9.0k|Java|05/30|
-|179|[daniulive/SmarterStreaming](https://github.com/daniulive/SmarterStreaming)|业内为数不多致力于极致体验的超强全自研跨平台(windows/android/iOS)流媒体内核，通过模块化自由组合，支持实时RTMP推流、RTSP推流、RTMP播放器、RTSP播放器、录像、多路流媒体转发、音视频导播、动态视频合成、音频混音、直播互动、内置轻量级RTSP服务等，比快更快，业界真正靠谱的超低延迟直播SDK(1秒内，低延迟模式下200~400ms)。|9.0k|Java|10/27|
-|180|[cnodejs/nodeclub](https://github.com/cnodejs/nodeclub)|:baby_chick:Nodeclub 是使用 Node.js 和 MongoDB 开发的社区系统|8.9k|JavaScript|09/23|
-|181|[gyf-dev/ImmersionBar](https://github.com/gyf-dev/ImmersionBar)|android 4.4以上沉浸式状态栏和沉浸式导航栏管理，适配横竖屏切换、刘海屏、软键盘弹出等问题，可以修改状态栏字体颜色和导航栏图标颜色，以及不可修改字体颜色手机的适配，适用于Activity、Fragment、DialogFragment、Dialog，PopupWindow，一句代码轻松实现，以及对bar的其他设置，详见README。简书请参考：http://www.jianshu.com/p/2a884e211a62|8.9k|Java|10/16|
-|182|[programthink/books](https://github.com/programthink/books)|【编程随想】收藏的电子书清单（多个学科，含下载链接）|8.8k|-|08/13|
-|183|[skywind3000/kcp](https://github.com/skywind3000/kcp)|KCP - A Fast and Reliable ARQ Protocol (快速可靠传输协议)|8.7k|C|10/22|
-|184|[bilibili/DanmakuFlameMaster](https://github.com/bilibili/DanmakuFlameMaster)|Android开源弹幕引擎·烈焰弹幕使 ～|8.7k|Java|02/27|
-|185|[lyswhut/lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)|一个基于 electron 的音乐软件|8.6k|Vue|10/30|
-|186|[darknessomi/musicbox](https://github.com/darknessomi/musicbox)|网易云音乐命令行版本|8.6k|Python|10/23|
-|187|[ChenYilong/iOSInterviewQuestions](https://github.com/ChenYilong/iOSInterviewQuestions)|iOS interview questions;iOS面试题集锦（附答案）--学习qq群或 Telegram 群交流 https://github.com/ChenYilong/iOSBlog/issues/21|8.5k|C++|06/08|
-|188|[CodeTips/BaiduNetdiskPlugin-macOS](https://github.com/CodeTips/BaiduNetdiskPlugin-macOS)|For macOS.百度网盘 破解SVIP、下载速度限制~|8.5k|Objective-C|10/17|
-|189|[sparanoid/chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines)|Chinese copywriting guidelines for better written communication／中文文案排版指北|8.5k|CoffeeScript|05/07|
-|190|[halfrost/LeetCode-Go](https://github.com/halfrost/LeetCode-Go)|✅ Solutions to LeetCode by Go, 100% test coverage, runtime beats 100% / LeetCode 题解|8.5k|Go|10/18|
-|191|[paascloud/paascloud-master](https://github.com/paascloud/paascloud-master)|spring cloud + vue + oAuth2.0全家桶实战，前后端分离模拟商城，完整的购物流程、后端运营平台，可以实现快速搭建企业级微服务项目。支持微信登录等三方登录。|8.5k|Java|07/02|
-|192|[zhisheng17/flink-learning](https://github.com/zhisheng17/flink-learning)|flink learning blog. http://www.flink-learning.com  含 Flink 入门、概念、原理、实战、性能调优、源码解析等内容。涉及 Flink Connector、Metrics、Library、DataStream API、Table API & SQL 等内容的学习案例，还有 Flink 落地应用的大型项目案例（PVUV、日志存储、百亿数据实时去重、监控告警）分享。欢迎大家支持我的专栏《大数据实时计算引擎 Flink 实战与性能优化》|8.4k|Java|10/17|
-|193|[stanzhai/be-a-professional-programmer](https://github.com/stanzhai/be-a-professional-programmer)|成为专业程序员路上用到的各种优秀资料、神器及框架|8.4k|-|07/16|
-|194|[bailicangdu/vue2-happyfri](https://github.com/bailicangdu/vue2-happyfri)|vue2 + vue-router + vuex  入门项目|8.4k|JavaScript|08/11|
-|195|[chokcoco/iCSS](https://github.com/chokcoco/iCSS)|不止于 CSS|8.3k|-|10/29|
-|196|[hyb1996/Auto.js](https://github.com/hyb1996/Auto.js)|A UiAutomator on android, does not need root access(安卓平台上的JavaScript自动化工具)|8.3k|Java|10/07|
-|197|[trazyn/ieaseMusic](https://github.com/trazyn/ieaseMusic)|网易云音乐第三方|8.3k|JavaScript|07/07|
-|198|[lihengming/spring-boot-api-project-seed](https://github.com/lihengming/spring-boot-api-project-seed)|:seedling::rocket:一个基于Spring Boot & MyBatis的种子项目，用于快速构建中小型API、RESTful API项目~|8.3k|Java|10/22|
-|199|[talkgo/night](https://github.com/talkgo/night)|Weekly Go Online Meetup via Bilibili｜Go 夜读｜由 SIG 成员维护｜通过 bilibili 在线直播的方式分享 Go 相关的技术话题，每天大家在微信/telegram/Slack 上及时沟通交流编程技术话题。|8.3k|Go|10/20|
-|200|[GitHubDaily/GitHubDaily](https://github.com/GitHubDaily/GitHubDaily)|GitHubDaily 分享内容定期整理与分类。欢迎推荐、自荐项目，让更多人知道你的项目。|8.2k|-|07/10|
-|201|[YunaiV/SpringBoot-Labs](https://github.com/YunaiV/SpringBoot-Labs)|一个涵盖六个专栏：Spring Boot 2.X、Spring Cloud、Spring Cloud Alibaba、Dubbo、分布式消息队列、分布式事务的仓库。希望胖友小手一抖，右上角来个 Star，感恩 1024|8.2k|Java|10/23|
-|202|[toutiaoio/awesome-architecture](https://github.com/toutiaoio/awesome-architecture)|架构师技术图谱，助你早日成为架构师|8.2k|-|10/29|
-|203|[APIJSON/APIJSON](https://github.com/APIJSON/APIJSON)|🏆码云最有价值开源项目 🚀后端接口和文档自动化，前端(客户端) 定制返回 JSON 的数据和结构！🏆Gitee Most Valuable Project 🚀A JSON Transmission Protocol and an ORM Library for automatically providing APIs and Docs.|8.2k|Java|10/27|
-|204|[heibaiying/BigData-Notes](https://github.com/heibaiying/BigData-Notes)|大数据入门指南  :star:|8.2k|Java|10/20|
-|205|[zhaoolee/ChineseBQB](https://github.com/zhaoolee/ChineseBQB)|🇨🇳 Chinese sticker pack,More joy / 表情包的博物馆, Github最有毒的仓库, 中国表情包大集合, 聚欢乐~|8.2k|JavaScript|10/12|
-|206|[hackware1993/MagicIndicator](https://github.com/hackware1993/MagicIndicator)|A powerful, customizable and extensible ViewPager indicator framework. As the best alternative of ViewPagerIndicator, TabLayout and PagerSlidingTabStrip   ——   强大、可定制、易扩展的 ViewPager 指示器框架。是ViewPagerIndicator、TabLayout、PagerSlidingTabStrip的最佳替代品。支持角标，更支持在非ViewPager场景下使用（使用hide()、show()切换Fragment或使用se ...|8.2k|Java|09/29|
-|207|[chenyuntc/pytorch-book](https://github.com/chenyuntc/pytorch-book)|PyTorch tutorials and fun projects including neural talk, neural style, poem writing, anime generation (《深度学习框架PyTorch：入门与实战》)|8.1k|Jupyter Notebook|07/14|
-|208|[EtherDream/jsproxy](https://github.com/EtherDream/jsproxy)|一个基于浏览器端 JS 实现的在线代理|8.0k|Shell|05/08|
-|209|[star7th/showdoc](https://github.com/star7th/showdoc)|ShowDoc is a tool greatly applicable for an IT team to share documents online一个非常适合IT团队的在线API文档、技术文档工具|8.0k|JavaScript|10/24|
-|210|[fangzesheng/free-api](https://github.com/fangzesheng/free-api)|收集免费的接口服务,做一个api的搬运工|8.0k|-|10/11|
-|211|[Embedding/Chinese-Word-Vectors](https://github.com/Embedding/Chinese-Word-Vectors)|100+ Chinese Word Vectors 上百种预训练中文词向量 |8.0k|Python|08/24|
-|212|[didi/chameleon](https://github.com/didi/chameleon)|🦎 一套代码运行多端，一端所见即多端所见|7.9k|JavaScript|09/21|
-|213|[dxcweb/high-speed-downloader](https://github.com/dxcweb/high-speed-downloader)|已不再维护|7.9k|-|04/16|
-|214|[flutterchina/flutter-in-action](https://github.com/flutterchina/flutter-in-action)|《Flutter实战》电子书|7.8k|HTML|09/28|
-|215|[sfyc23/EverydayWechat](https://github.com/sfyc23/EverydayWechat)|微信助手：1.每日定时给好友（女友）发送定制消息。2.机器人自动回复好友。3.群助手功能（例如：查询垃圾分类、天气、日历、电影实时票房、快递物流、PM2.5等）|7.7k|Python|09/28|
-|216|[rootsongjc/kubernetes-handbook](https://github.com/rootsongjc/kubernetes-handbook)|Kubernetes中文指南/云原生应用架构实践手册 -  https://jimmysong.io/kubernetes-handbook|7.7k|Shell|10/10|
-|217|[sylnsfar/qrcode](https://github.com/sylnsfar/qrcode)|artistic QR Code in Python （Animated GIF qr code）- Python 艺术二维码生成器 （GIF动态二维码、图片二维码）|7.7k|Python|10/25|
-|218|[Light-City/CPlusPlusThings](https://github.com/Light-City/CPlusPlusThings)|C++那些事|7.7k|C++|10/18|
-|219|[haotian-wang/google-access-helper](https://github.com/haotian-wang/google-access-helper)|谷歌访问助手破解版|7.6k|JavaScript|04/04|
-|220|[hackstoic/golang-open-source-projects](https://github.com/hackstoic/golang-open-source-projects)|为互联网IT人打造的中文版awesome-go|7.6k|-|10/17|
-|221|[TwoWater/Python](https://github.com/TwoWater/Python)|最良心的 Python 教程：|7.6k|-|10/19|
-|222|[DeathKing/Learning-SICP](https://github.com/DeathKing/Learning-SICP)|MIT视频公开课《计算机程序的构造和解释》中文化项目及课程学习资料搜集。|7.6k|Ruby|02/25|
-|223|[evil-huawei/evil-huawei](https://github.com/evil-huawei/evil-huawei)|Evil Huawei - 华为作过的恶|7.6k|JavaScript|08/03|
-|224|[hoochanlon/w3-goto-world](https://github.com/hoochanlon/w3-goto-world)|🍅Git/AWS/Google 镜像 ,SS/SSR/VMESS节点,WireGuard,IPFS, DeepWeb,Capitalism 知识储备库|7.6k|Python|10/26|
-|225|[mzlogin/awesome-adb](https://github.com/mzlogin/awesome-adb)|ADB Usage Complete / ADB 用法大全|7.6k|-|08/17|
-|226|[top-think/think](https://github.com/top-think/think)|ThinkPHP Framework ——十年匠心的高性能PHP框架|7.6k|PHP|10/27|
-|227|[thinkgem/jeesite](https://github.com/thinkgem/jeesite)|JeeSite 是一个企业信息化开发基础平台，Java企业应用开源框架，Java EE（J2EE）快速开发框架，使用经典技术组合（Spring、Spring MVC、Apache Shiro、MyBatis、Bootstrap UI），包括核心模块如：组织机构、角色用户、权限授权、数据权限、内容管理、工作流等。|7.5k|JavaScript|10/08|
-|228|[icindy/wxParse](https://github.com/icindy/wxParse)|wxParse-微信小程序富文本解析自定义组件，支持HTML及markdown解析|7.5k|JavaScript|03/19|
-|229|[pwxcoo/chinese-xinhua](https://github.com/pwxcoo/chinese-xinhua)|:orange_book: 中华新华字典数据库。包括歇后语，成语，词语，汉字。|7.4k|Python|10/18|
-|230|[nusr/hacker-laws-zh](https://github.com/nusr/hacker-laws-zh)|💻📖对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)|7.4k|-|10/29|
-|231|[opendigg/awesome-github-wechat-weapp](https://github.com/opendigg/awesome-github-wechat-weapp)|微信小程序开源项目库汇总|7.4k|-|08/16|
-|232|[hs-web/hsweb-framework](https://github.com/hs-web/hsweb-framework)|hsweb (haʊs wɛb) 是一个用于快速搭建企业后台管理系统的基础项目,集成一揽子便捷功能如:便捷的通用增删改查,强大的权限管理,动态多数据源,动态表单,在线数据库维护等. 基于 spring-boot,mybaits.|7.4k|Java|10/29|
-|233|[banchichen/TZImagePickerController](https://github.com/banchichen/TZImagePickerController)|一个支持多选、选原图和视频的图片选择器，同时有预览、裁剪功能，支持iOS6+。  A clone of UIImagePickerController, support picking multiple photos、original photo、video, also allow preview photo and video, support iOS6+|7.4k|Objective-C|10/29|
-|234|[vipstone/faceai](https://github.com/vipstone/faceai)|一款入门级的人脸、视频、文字检测以及识别的项目.|7.3k|Python|04/16|
-|235|[guyueyingmu/avbook](https://github.com/guyueyingmu/avbook)|AV 电影管理系统， avmoo , javbus , javlibrary 爬虫，线上 AV 影片图书馆，AV 磁力链接数据库，Japanese Adult Video Library,Adult Video Magnet Links - Japanese Adult Video Database|7.3k|PHP|10/01|
-|236|[judasn/Linux-Tutorial](https://github.com/judasn/Linux-Tutorial)|《Java 程序员眼中的 Linux》|7.3k|Shell|10/27|
-|237|[DuGuQiuBai/Java](https://github.com/DuGuQiuBai/Java)|27天成为Java大神|7.3k|Java|10/18|
-|238|[ruanyf/document-style-guide](https://github.com/ruanyf/document-style-guide)|中文技术文档的写作规范|7.3k|-|07/23|
-|239|[wangshub/Douyin-Bot](https://github.com/wangshub/Douyin-Bot)|😍 Python 抖音机器人，论如何在抖音上找到漂亮小姐姐？ |7.2k|Python|05/07|
-|240|[polaris1119/The-Golang-Standard-Library-by-Example](https://github.com/polaris1119/The-Golang-Standard-Library-by-Example)|Golang标准库。对于程序员而言，标准库与语言本身同样重要，它好比一个百宝箱，能为各种常见的任务提供完美的解决方案。以示例驱动的方式讲解Golang的标准库。|7.2k|Go|07/22|
-|241|[macrozheng/mall-admin-web](https://github.com/macrozheng/mall-admin-web)|mall-admin-web是一个电商后台管理系统的前端项目，基于Vue+Element实现。 主要包括商品管理、订单管理、会员管理、促销管理、运营管理、内容管理、统计报表、财务管理、权限管理、设置等功能。|7.2k|Vue|10/08|
-|242|[PanDownloadServer/Server](https://github.com/PanDownloadServer/Server)|PanDownload的个人维护版本|7.1k|HTML|09/25|
-|243|[eip-work/kuboard-press](https://github.com/eip-work/kuboard-press)|Kuboard 是基于 Kubernetes 的微服务管理界面。同时提供 Kubernetes 免费中文教程，入门教程，最新版本的 Kubernetes v1.18 安装手册，(k8s install) 在线答疑，持续更新。|7.1k|JavaScript|10/29|
-|244|[macrozheng/mall-learning](https://github.com/macrozheng/mall-learning)|mall学习教程，架构、业务、技术要点全方位解析。mall项目（39k+star）是一套电商系统，使用现阶段主流技术实现。涵盖了SpringBoot 2.3.0、MyBatis 3.4.6、Elasticsearch 7.6.2、RabbitMQ 3.7.15、Redis 5.0、MongoDB 4.2.5、Mysql5.7等技术，采用Docker容器化部署。|7.1k|Java|10/28|
-|245|[huanghaibin-dev/CalendarView](https://github.com/huanghaibin-dev/CalendarView)|Android上一个优雅、万能自定义UI、支持周视图、自定义周起始、性能高效的日历控件，支持热插拔实现的UI定制！支持标记、自定义颜色、农历、自定义月视图各种显示模式等。Canvas绘制，速度快、占用内存低，你真的想不到日历居然还可以如此优雅！An elegant, highly customized and high-performance Calendar Widget on Android.|7.1k|Java|09/16|
-|246|[xcatliu/typescript-tutorial](https://github.com/xcatliu/typescript-tutorial)|TypeScript 入门教程|7.1k|TypeScript|10/21|
-|247|[wsdjeg/vim-galore-zh_cn](https://github.com/wsdjeg/vim-galore-zh_cn)|Vim 从入门到精通|7.0k|Vim script|09/19|
-|248|[crawlab-team/crawlab](https://github.com/crawlab-team/crawlab)|Distributed web crawler admin platform for spiders management regardless of languages and frameworks. 分布式爬虫管理平台，支持任何语言和框架|7.0k|Go|10/29|
-|249|[helloqingfeng/Awsome-Front-End-learning-resource](https://github.com/helloqingfeng/Awsome-Front-End-learning-resource)|:octocat:GitHub最全的前端资源汇总仓库（包括前端学习、开发资源、求职面试等）|7.0k|PHP|08/28|
-|250|[bingoogolapple/BGAQRCode-Android](https://github.com/bingoogolapple/BGAQRCode-Android)|QRCode 扫描二维码、扫描条形码、相册获取图片后识别、生成带 Logo 二维码、支持微博微信 QQ 二维码扫描样式|6.9k|C|07/11|
-|251|[crossoverJie/cim](https://github.com/crossoverJie/cim)|📲cim(cross IM) 适用于开发者的分布式即时通讯系统|6.9k|Java|10/13|
-|252|[bailicangdu/react-pxq](https://github.com/bailicangdu/react-pxq)|一个 react + redux 的完整项目 和 个人总结|6.9k|JavaScript|08/11|
-|253|[inferjay/AndroidDevTools](https://github.com/inferjay/AndroidDevTools)|收集整理Android开发所需的Android SDK、开发中用到的工具、Android开发教程、Android设计规范，免费的设计素材等。|6.9k|-|10/30|
-|254|[zh-google-styleguide/zh-google-styleguide](https://github.com/zh-google-styleguide/zh-google-styleguide)|Google 开源项目风格指南 (中文版)|6.9k|Makefile|10/29|
-|255|[xirong/my-git](https://github.com/xirong/my-git)|Individual collecting material of learning git（有关 git 的学习资料）|6.8k|-|07/12|
-|256|[halfrost/Halfrost-Field](https://github.com/halfrost/Halfrost-Field)|✍🏻 这里是写博客的地方 —— Halfrost-Field 冰霜之地|6.8k|Objective-C|09/20|
-|257|[huangz1990/redis-3.0-annotated](https://github.com/huangz1990/redis-3.0-annotated)|带有详细注释的 Redis 3.0 代码（annotated Redis 3.0 source code）。|6.8k|C|04/23|
-|258|[NLP-LOVE/ML-NLP](https://github.com/NLP-LOVE/ML-NLP)|此项目是机器学习(Machine Learning)、深度学习(Deep Learning)、NLP面试中常考到的知识点和代码实现，也是作为一个算法工程师必会的理论基础知识。|6.8k|Jupyter Notebook|04/20|
-|259|[fuck-xuexiqiangguo/Fuck-XueXiQiangGuo](https://github.com/fuck-xuexiqiangguo/Fuck-XueXiQiangGuo)|学习强国 懒人刷分工具 自动学习|6.8k|-|05/17|
-|260|[greatghoul/remote-working](https://github.com/greatghoul/remote-working)|收集整理远程工作相关的资料|6.7k|Ruby|10/25|
-|261|[XXApple/AndroidLibs](https://github.com/XXApple/AndroidLibs)|:fire:正在成为史上最全分类 Android 开源大全~~~~（长期更新 Star 一下吧）|6.7k|-|04/20|
-|262|[jobbole/awesome-javascript-cn](https://github.com/jobbole/awesome-javascript-cn)|JavaScript 资源大全中文版，内容包括：包管理器、加载器、测试框架、运行器、QA、MVC框架和库、模板引擎等|6.6k|-|06/28|
-|263|[apachecn/Interview](https://github.com/apachecn/Interview)|Interview = 简历指南 + LeetCode + Kaggle|6.6k|Jupyter Notebook|09/10|
-|264|[hq450/fancyss_history_package](https://github.com/hq450/fancyss_history_package)|科学上网插件的离线安装包储存在这里|6.6k|-|10/12|
-|265|[open-power-workgroup/Hospital](https://github.com/open-power-workgroup/Hospital)|OpenPower工作组收集汇总的医院开放数据|6.5k|HTML|10/27|
-|266|[Qv2ray/Qv2ray](https://github.com/Qv2ray/Qv2ray)|:star: Linux / Windows / macOS 跨平台 V2Ray 客户端   支持 VMess / VLESS / SSR / Trojan / Trojan-Go / NaiveProxy / HTTP / SOCKS5   使用 C++ / Qt5 开发   可拓展插件式设计 :star:|6.5k|C++|10/29|
-|267|[getgridea/gridea](https://github.com/getgridea/gridea)|✍️A static blog writing client (一个静态博客写作客户端)|6.5k|CSS|09/08|
-|268|[luyishisi/Anti-Anti-Spider](https://github.com/luyishisi/Anti-Anti-Spider)|越来越多的网站具有反爬虫特性，有的用图片隐藏关键数据，有的使用反人类的验证码，建立反反爬虫的代码仓库，通过与不同特性的网站做斗争（无恶意）提高技术。（欢迎提交难以采集的网站）（因工作原因，项目暂停） |6.5k|Python|06/29|
-|269|[JeffreySu/WeiXinMPSDK](https://github.com/JeffreySu/WeiXinMPSDK)|微信公众平台SDK Senparc.Weixin for C#，支持.NET Framework及.NET Core。已支持微信公众号、小程序、小游戏、企业号、企业微信、开放平台、微信支付、JSSDK、微信周边等全平台。 WeChat SDK for C#.|6.5k|C#|10/24|
-|270|[cloudreve/Cloudreve](https://github.com/cloudreve/Cloudreve)|🌩支持多家云存储的云盘系统 (A project helps you build your own cloud in minutes)|6.5k|Go|10/26|
-|271|[qinjx/30min_guides](https://github.com/qinjx/30min_guides)|覃健祥的学习笔记，各种几十分钟入门的文档|6.4k|-|02/09|
-|272|[thx/rap2-delos](https://github.com/thx/rap2-delos)|阿里妈妈前端团队出品的开源接口管理工具RAP第二代|6.4k|TypeScript|10/27|
-|273|[skywind3000/awesome-cheatsheets](https://github.com/skywind3000/awesome-cheatsheets)|超级速查表 - 编程语言、框架和开发工具的速查表，单个文件包含一切你需要知道的东西 :zap:|6.4k|Shell|10/21|
-|274|[Dod-o/Statistical-Learning-Method_Code](https://github.com/Dod-o/Statistical-Learning-Method_Code)|手写实现李航《统计学习方法》书中全部算法|6.4k|Python|09/08|
-|275|[czy36mengfei/tensorflow2_tutorials_chinese](https://github.com/czy36mengfei/tensorflow2_tutorials_chinese)|tensorflow2中文教程，持续更新(当前版本:tensorflow2.0)，tag: tensorflow 2.0 tutorials|6.4k|Jupyter Notebook|06/11|
-|276|[deeplearning-ai/machine-learning-yearning-cn](https://github.com/deeplearning-ai/machine-learning-yearning-cn)|Machine Learning Yearning 中文版 - 《机器学习训练秘籍》 - Andrew Ng 著|6.4k|CSS|04/05|
-|277|[renzifeng/ZFPlayer](https://github.com/renzifeng/ZFPlayer)|Support customization of any player SDK and control layer(支持定制任何播放器SDK和控制层)|6.4k|Objective-C|09/18|
-|278|[ChenYilong/CYLTabBarController](https://github.com/ChenYilong/CYLTabBarController)|[EN]It is an iOS UI module library for adding animation to iOS tabbar items and icons with Lottie, and adding a bigger center UITabBar Item.  [CN]【中国特色 TabBar】一行代码实现 Lottie 动画TabBar，支持中间带+号的TabBar样式，自带红点角标，支持动态刷新。【iOS13 & Dark Mode  & iPhone XS MAX supported】|6.3k|Objective-C|05/19|
-|279|[yifeikong/reverse-interview-zh](https://github.com/yifeikong/reverse-interview-zh)|技术面试最后反问面试官的话|6.3k|-|10/01|
-|280|[wuhan2020/wuhan2020](https://github.com/wuhan2020/wuhan2020)|新型冠状病毒防疫信息收集平台|6.3k|-|10/01|
-|281|[alibaba/otter](https://github.com/alibaba/otter)|阿里巴巴分布式数据库同步系统(解决中美异地机房)|6.2k|Java|10/13|
-|282|[dyc87112/SpringCloud-Learning](https://github.com/dyc87112/SpringCloud-Learning)|Spring Cloud基础教程，持续连载更新中|6.2k|Java|09/10|
-|283|[easzlab/kubeasz](https://github.com/easzlab/kubeasz)|使用Ansible脚本安装K8S集群，介绍组件交互原理，方便直接，不受国内网络环境影响|6.2k|HTML|10/29|
-|284|[phodal/github](https://github.com/phodal/github)|GitHub 漫游指南- a Chinese ebook on how to build a good project on Github. Explore the users' behavior. Find some thing interest.|6.1k|Rich Text Format|06/14|
-|285|[OpenFlutter/Flutter-Notebook](https://github.com/OpenFlutter/Flutter-Notebook)|FlutterDemo合集，今天你fu了吗|6.1k|Dart|10/01|
-|286|[1c7/Crash-Course-Computer-Science-Chinese](https://github.com/1c7/Crash-Course-Computer-Science-Chinese)|:computer: 计算机速成课   Crash Course 字幕组 (全40集 2018-5-1 精校完成)|6.1k|JavaScript|07/02|
-|287|[gedoor/MyBookshelf](https://github.com/gedoor/MyBookshelf)|阅读是一款可以自定义来源阅读网络内容的工具，为广大网络文学爱好者提供一种方便、快捷舒适的试读体验。|6.1k|Java|10/28|
-|288|[ElemeFE/v-charts](https://github.com/ElemeFE/v-charts)|基于 Vue2.0 和 ECharts 封装的图表组件📈📊|6.1k|JavaScript|08/26|
-|289|[jindongwang/transferlearning](https://github.com/jindongwang/transferlearning)|Everything about Transfer Learning and Domain Adaptation--迁移学习|6.1k|Python|10/25|
-|290|[xtyxtyx/sorry](https://github.com/xtyxtyx/sorry)|在线制作`sorry 为所欲为`的gif|6.1k|CSS|04/03|
-|291|[c-hj/SJTU-Courses](https://github.com/c-hj/SJTU-Courses)|上海交通大学课程资料分享|6.1k|-|04/17|
-|292|[EZLippi/Tinyhttpd](https://github.com/EZLippi/Tinyhttpd)|Tinyhttpd 是J. David Blackstone在1999年写的一个不到 500 行的超轻量型 Http Server，用来学习非常不错，可以帮助我们真正理解服务器程序的本质。官网:http://tinyhttpd.sourceforge.net|6.0k|C|06/16|
-|293|[OI-wiki/OI-wiki](https://github.com/OI-wiki/OI-wiki)|:star2: Wiki of OI / ICPC for everyone. （某大型游戏线上攻略，内含炫酷算术魔法）|6.0k|-|10/30|
-|294|[huiyadanli/RevokeMsgPatcher](https://github.com/huiyadanli/RevokeMsgPatcher)|:trollface: A hex editor for WeChat/QQ/TIM - PC版微信/QQ/TIM防撤回补丁（我已经看到了，撤回也没用了）|6.0k|C#|10/14|
-|295|[chuzhixin/vue-admin-beautiful](https://github.com/chuzhixin/vue-admin-beautiful)|🚀🚀🚀vue3.0,vue3,vue3.x,vue.js,后台管理，github开源admin中最优秀的vue3.0集成框架之一，它是国内首个基于vue3.0 + antdv的开源admin项目，同时支持电脑，手机，平板，🔥🔥🔥vue3.0-antdv分支使用vue3.x开发，master分支使用的是vue2.x开发|6.0k|Vue|10/28|
-|296|[injetlee/Python](https://github.com/injetlee/Python)|Python脚本。模拟登录知乎， 爬虫，操作excel，微信公众号，远程开机|5.9k|Python|10/07|
-|297|[chyingp/nodejs-learning-guide](https://github.com/chyingp/nodejs-learning-guide)|Nodejs学习笔记以及经验总结，公众号"程序猿小卡"|5.9k|Ruby|07/08|
-|298|[Exrick/xmall](https://github.com/Exrick/xmall)|基于SOA架构的分布式电商购物商城 前后端分离 前台商城:Vue全家桶 后台管理系统:Dubbo/SSM/Elasticsearch/Redis/MySQL/ActiveMQ/Shiro/Zookeeper等|5.9k|Java|10/13|
-|299|[opsnull/follow-me-install-kubernetes-cluster](https://github.com/opsnull/follow-me-install-kubernetes-cluster)|和我一步步部署 kubernetes 集群|5.9k|Shell|09/22|
-|300|[gsdios/SDCycleScrollView](https://github.com/gsdios/SDCycleScrollView)|Autoscroll Banner.   无限循环图片、文字轮播器。|5.9k|Objective-C|09/27|
+|1|[vuejs/vue](https://github.com/vuejs/vue)|This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core|208.5k|JavaScript|2024-10-10|
+|2|[huggingface/transformers](https://github.com/huggingface/transformers)|🤗 Transformers: State-of-the-art Machine Learning for Pytorch, TensorFlow, and JAX.|142.2k|Python|2025-03-31|
+|3|[electron/electron](https://github.com/electron/electron)|:electron: Build cross-platform desktop apps with JavaScript, HTML, and CSS|116.1k|C++|2025-03-31|
+|4|[deepseek-ai/DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3)|-|94.7k|Python|2025-03-16|
+|5|[ant-design/ant-design](https://github.com/ant-design/ant-design)|An enterprise-class UI design language and React UI library|94.1k|TypeScript|2025-03-31|
+|6|[fatedier/frp](https://github.com/fatedier/frp)|A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.|92.0k|Go|2025-03-07|
+|7|[PanJiaChen/vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)|:tada: A magical vue admin                                                                https://pa...|89.0k|Vue|2024-10-24|
+|8|[langgenius/dify](https://github.com/langgenius/dify)|Dify is an open-source LLM app development platform. Dify's intuitive interface combines AI workflow...|88.2k|TypeScript|2025-03-31|
+|9|[deepseek-ai/DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)|-|87.8k|-|2025-02-24|
+|10|[rustdesk/rustdesk](https://github.com/rustdesk/rustdesk)|An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer...|85.0k|Rust|2025-03-31|
+|11|[ChatGPTNextWeb/NextChat](https://github.com/ChatGPTNextWeb/NextChat)|✨ Light and Fast AI Assistant. Support: Web   iOS   MacOS   Android    Linux   Windows|82.3k|TypeScript|2025-03-31|
+|12|[supabase/supabase](https://github.com/supabase/supabase)|The open source Firebase alternative. Supabase gives you a dedicated Postgres database to build your...|80.0k|TypeScript|2025-03-31|
+|13|[macrozheng/mall](https://github.com/macrozheng/mall)|mall项目是一套电商系统，包括前台商城系统及后台管理系统，基于Spring Boot+MyBatis实现，采用Docker容器化部署。 前台商城系统包含首页门户、商品推荐、商品搜索、商品展示、购物车...|79.7k|Java|2025-03-24|
+|14|[tonsky/FiraCode](https://github.com/tonsky/FiraCode)|Free monospaced font with programming ligatures|78.5k|Clojure|2025-03-14|
+|15|[mermaid-js/mermaid](https://github.com/mermaid-js/mermaid)|Generation of diagrams like flowcharts or sequence diagrams from text in a similar manner as markdow...|77.5k|JavaScript|2025-03-31|
+|16|[ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)|LLM inference in C/C++|77.4k|C++|2025-03-31|
+|17|[3b1b/manim](https://github.com/3b1b/manim)|Animation engine for explanatory math videos|76.4k|Python|2025-03-20|
+|18|[nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all)|GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.|72.9k|C++|2025-03-19|
+|19|[binary-husky/gpt_academic](https://github.com/binary-husky/gpt_academic)|为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文...|68.0k|Python|2025-03-24|
+|20|[Eugeny/tabby](https://github.com/Eugeny/tabby)|A terminal for a more modern age|62.7k|TypeScript|2025-03-28|
+|21|[immich-app/immich](https://github.com/immich-app/immich)|High performance self-hosted photo and video management solution.|62.5k|TypeScript|2025-03-31|
+|22|[apache/echarts](https://github.com/apache/echarts)|Apache ECharts is a powerful, interactive charting and data visualization library for browser|62.2k|TypeScript|2025-03-31|
+|23|[chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11)|Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.|61.4k|Assembly|2025-03-16|
+|24|[localsend/localsend](https://github.com/localsend/localsend)|An open-source cross-platform alternative to AirDrop|59.5k|Dart|2025-03-27|
+|25|[lobehub/lobe-chat](https://github.com/lobehub/lobe-chat)|🤯 Lobe Chat - an open-source, modern-design AI chat framework. Supports Multi AI Providers( OpenAI /...|58.4k|TypeScript|2025-03-31|
+|26|[rust-lang/rustlings](https://github.com/rust-lang/rustlings)|:crab: Small exercises to get you used to reading and writing Rust code!|57.3k|Rust|2025-03-14|
+|27|[Stirling-Tools/Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF)|#1 Locally hosted web application that allows you to perform various operations on PDF files|55.1k|Java|2025-03-31|
+|28|[geekan/MetaGPT](https://github.com/geekan/MetaGPT)|🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming|53.9k|Python|2025-03-31|
+|29|[ultralytics/yolov5](https://github.com/ultralytics/yolov5)|YOLOv5 🚀 in PyTorch > ONNX > CoreML > TFLite|53.2k|Python|2025-03-29|
+|30|[All-Hands-AI/OpenHands](https://github.com/All-Hands-AI/OpenHands)|🙌 OpenHands: Code Less, Make More|51.6k|Python|2025-03-31|
+|31|[golang-standards/project-layout](https://github.com/golang-standards/project-layout)|Standard Go Project Layout|51.6k|Makefile|2025-01-14|
+|32|[Textualize/rich](https://github.com/Textualize/rich)|Rich is a Python library for rich text and beautiful formatting in the terminal.|51.4k|Python|2025-03-30|
+|33|[BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)|ripgrep recursively searches directories for a regex pattern while respecting your gitignore|51.4k|Rust|2025-02-27|
+|34|[Semantic-Org/Semantic-UI](https://github.com/Semantic-Org/Semantic-UI)|Semantic is a UI component framework based around useful principles from natural language.|51.1k|JavaScript|2024-11-27|
+|35|[DefinitelyTyped/DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)|The repository for high quality TypeScript type definitions.|49.5k|TypeScript|2025-03-31|
+|36|[PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)|Awesome multilingual OCR toolkits based on PaddlePaddle (practical ultra lightweight OCR system, sup...|47.9k|Python|2025-03-28|
+|37|[appwrite/appwrite](https://github.com/appwrite/appwrite)|Build like a team of hundreds_|47.8k|TypeScript|2025-03-31|
+|38|[go-gitea/gitea](https://github.com/go-gitea/gitea)|Git with a cup of tea! Painless self-hosted all-in-one software development service, including Git h...|47.8k|Go|2025-03-31|
+|39|[iamkun/dayjs](https://github.com/iamkun/dayjs)|⏰ Day.js 2kB immutable date-time library alternative to Moment.js with the same modern API|47.5k|JavaScript|2025-03-20|
+|40|[AlistGo/alist](https://github.com/AlistGo/alist)|🗂️A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs. / 一个支持多存储的...|47.4k|Go|2025-03-27|
+|41|[infiniflow/ragflow](https://github.com/infiniflow/ragflow)|RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document underst...|47.2k|TypeScript|2025-03-31|
+|42|[serverless/serverless](https://github.com/serverless/serverless)|⚡ Serverless Framework – Effortlessly build apps that auto-scale, incur zero costs when idle, and re...|46.6k|JavaScript|2025-03-24|
+|43|[gogs/gogs](https://github.com/gogs/gogs)|Gogs is a painless self-hosted Git service|46.0k|Go|2025-03-05|
+|44|[hiyouga/LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)|Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)|45.7k|Python|2025-03-31|
+|45|[RVC-Boss/GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)|1 min voice data can also be used to train a good TTS model! (few shot voice cloning)|43.4k|Python|2025-03-31|
+|46|[vllm-project/vllm](https://github.com/vllm-project/vllm)|A high-throughput and memory-efficient inference and serving engine for LLMs|43.1k|Python|2025-03-31|
+|47|[lyswhut/lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)|一个基于 electron 的音乐软件|43.1k|JavaScript|2025-03-20|
+|48|[jeecgboot/JeecgBoot](https://github.com/jeecgboot/JeecgBoot)|🔥「AI 低代码平台」前后端分离 SpringBoot 2.x/3.x，SpringCloud，Ant Design&Vue3，Mybatis，Shiro！强大的代码生成器让前后端代码一键生成，无需写...|42.0k|Java|2025-03-31|
+|49|[Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm)|The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, ...|42.0k|JavaScript|2025-03-29|
+|50|[acmesh-official/acme.sh](https://github.com/acmesh-official/acme.sh)|A pure Unix shell script implementing ACME client protocol|41.9k|Shell|2025-03-29|
 
-⬆ [回到目录](#目录)
-
-<br/>
+查看完整榜单请访问：[README-Part2.md](README-Part2.md)
 
 ## Java
 
