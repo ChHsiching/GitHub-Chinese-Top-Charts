@@ -1,20 +1,20 @@
 name: Sync from Classified Repository
 
 on:
-  # 定时触发 - 每周一执行一次 (UTC 6:00 = 北京时间 14:00)
+  # Schedule trigger - Run weekly on Monday at UTC 6:00 (Beijing Time 14:00)
   schedule:
     - cron: '0 6 * * 1'
 
-  # 手动触发
+  # Manual trigger
   workflow_dispatch:
     inputs:
       reason:
-        description: '手动同步原因'
+        description: 'Manual sync reason'
         required: false
-        default: '手动同步测试'
+        default: 'Manual sync test'
         type: string
 
-# 允许此workflow写入到仓库
+# Allow this workflow to write to the repository
 permissions:
   contents: write
 
@@ -27,7 +27,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.GH_TOKEN }}
-        fetch-depth: 0  # 获取完整历史
+        fetch-depth: 0  # Fetch complete history
 
     - name: Configure Git
       run: |
@@ -36,59 +36,61 @@ jobs:
 
     - name: Display environment info
       run: |
-        echo "当前时间: $(date)"
-        echo "触发原因: ${{ github.event_name }}"
-        echo "工作目录: $(pwd)"
-        echo "仓库: ${{ github.repository }}"
+        echo "Current time: $(date)"
+        echo "Trigger reason: ${{ github.event_name }}"
+        echo "Working directory: $(pwd)"
+        echo "Repository: ${{ github.repository }}"
 
     - name: Show current Git status
       run: |
-        echo "=== 当前分支 ==="
+        echo "=== Current branches ==="
         git branch -a
-        echo "=== 最近提交 ==="
+        echo "=== Recent commits ==="
         git log --oneline -n 5
-        echo "=== 工作目录状态 ==="
+        echo "=== Working directory status ==="
         git status
+        echo "=== Detailed status for debugging ==="
+        git status --porcelain
 
     - name: Checkout Classified repository
       run: |
-        echo "=== 检出Classified仓库 ==="
+        echo "=== Checkout Classified repository ==="
         cd ..
         if [ -d "GitHub-Chinese-Top-Charts-Classified" ]; then
-          echo "Classified仓库已存在，更新..."
+          echo "Classified repository exists, updating..."
           cd GitHub-Chinese-Top-Charts-Classified
           git pull https://${{ secrets.GH_TOKEN }}@github.com/ChHsiching/GitHub-Chinese-Top-Charts-Classified.git main
         else
-          echo "克隆Classified仓库..."
+          echo "Cloning Classified repository..."
           git clone https://${{ secrets.GH_TOKEN }}@github.com/ChHsiching/GitHub-Chinese-Top-Charts-Classified.git
         fi
-        echo "Classified仓库检出完成"
+        echo "Classified repository checkout completed"
 
     - name: Execute sync script
       run: |
-        echo "=== 开始执行同步脚本 ==="
+        echo "=== Executing sync script ==="
         ./scripts/sync_from_classified.sh
 
     - name: Show sync results
       run: |
-        echo "=== 同步结果 ==="
+        echo "=== Sync results ==="
         if [ -f "sync.log" ]; then
-          echo "同步日志:"
+          echo "Sync log:"
           cat sync.log
         fi
 
-        echo "=== 最新提交 ==="
+        echo "=== Latest commits ==="
         git log --oneline -n 10
 
-        echo "=== sync-data分支状态 ==="
+        echo "=== sync-data branch status ==="
         if git show-ref --verify --quiet "refs/heads/sync-data"; then
           git checkout sync-data
-          echo "sync-data分支最新提交:"
+          echo "Latest commits in sync-data branch:"
           git log --oneline -n 5
-          echo "README.md中的All Language表格行数:"
+          echo "Number of rows in All Language table in README.md:"
           grep -c "^\|" README.md || echo "0"
         else
-          echo "sync-data分支不存在"
+          echo "sync-data branch does not exist"
         fi
 
     - name: Check for changes
@@ -97,27 +99,27 @@ jobs:
         if git show-ref --verify --quiet "refs/heads/sync-data"; then
           if git log --oneline main..sync-data | grep -q "."; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "检测到sync-data分支有新的更改"
+            echo "Detected new changes in sync-data branch"
           else
             echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "sync-data分支存在但没有新的更改"
+            echo "sync-data branch exists but no new changes"
           fi
         else
           echo "has_changes=false" >> $GITHUB_OUTPUT
-          echo "sync-data分支不存在"
+          echo "sync-data branch does not exist"
         fi
 
     - name: Create sync status badge
       if: always()
       run: |
-        echo "=== 创建同步状态 ==="
-        echo "同步时间: $(date -u)" > SYNC_STATUS.md
-        echo "触发方式: ${{ github.event_name }}" >> SYNC_STATUS.md
-        echo "同步状态: ${{ job.status }}" >> SYNC_STATUS.md
+        echo "=== Creating sync status ==="
+        echo "Sync time: $(date -u)" > SYNC_STATUS.md
+        echo "Trigger method: ${{ github.event_name }}" >> SYNC_STATUS.md
+        echo "Sync status: ${{ job.status }}" >> SYNC_STATUS.md
         if [ "${{ steps.check-changes.outputs.has_changes }}" = "true" ]; then
-          echo "有新更新: 是" >> SYNC_STATUS.md
+          echo "Has new updates: Yes" >> SYNC_STATUS.md
         else
-          echo "有新更新: 否" >> SYNC_STATUS.md
+          echo "Has new updates: No" >> SYNC_STATUS.md
         fi
 
     - name: Commit status file
@@ -127,32 +129,32 @@ jobs:
         git checkout main
         git add SYNC_STATUS.md 2>/dev/null || true
         if git diff --cached --quiet; then
-          echo "状态文件无更新"
+          echo "No updates to status file"
         else
-          git commit -m "更新同步状态: $(date -u)" || echo "状态文件提交失败"
+          git commit -m "Update sync status: $(date -u)" || echo "Status file commit failed"
         fi
 
     - name: Merge sync-data to main
       if: steps.check-changes.outputs.has_changes == 'true'
       run: |
-        echo "=== 合并sync-data分支到main分支 ==="
+        echo "=== Merging sync-data branch to main branch ==="
         git checkout main
 
-        # 合并sync-data分支
-        if git merge --no-ff sync-data -m "自动合并Classified数据同步: $(date '+%Y-%m-%d %H:%M:%S')" --allow-unrelated-histories; then
-          echo "合并成功"
+        # Merge sync-data branch
+        if git merge --no-ff sync-data -m "Auto merge Classified data sync: $(date '+%Y-%m-%d %H:%M:%S')" --allow-unrelated-histories; then
+          echo "Merge successful"
         else
-          echo "合并存在冲突，尝试解决..."
+          echo "Merge conflicts detected, attempting to resolve..."
 
-          # 显示冲突状态
-          echo "冲突文件："
+          # Show conflict status
+          echo "Conflicting files:"
           git diff --name-only --diff-filter=U
 
-          # 解决冲突：优先采用sync-data分支版本
+          # Resolve conflicts: prefer sync-data branch version
           git checkout --theirs .
           git add .
-          git commit -m "自动合并Classified数据同步(解决冲突): $(date '+%Y-%m-%d %H:%M:%S')"
-          echo "冲突已解决，采用sync-data分支版本"
+          git commit -m "Auto merge Classified data sync (conflicts resolved): $(date '+%Y-%m-%d %H:%M:%S')"
+          echo "Conflicts resolved, using sync-data branch version"
         fi
 
     - name: Push changes
@@ -160,30 +162,30 @@ jobs:
         git checkout main
         git push origin main
 
-        # 推送sync-data分支
+        # Push sync-data branch
         if git show-ref --verify --quiet "refs/heads/sync-data"; then
-          git push origin sync-data || echo "sync-data分支推送失败"
+          git push origin sync-data || echo "sync-data branch push failed"
         fi
 
     - name: Notify on failure
       if: failure()
       run: |
-        echo "⚠️ 同步失败!"
-        echo "仓库: ${{ github.repository }}"
-        echo "运行编号: ${{ github.run_number }}"
-        echo "失败时间: $(date -u)"
+        echo "⚠️ Sync failed!"
+        echo "Repository: ${{ github.repository }}"
+        echo "Run number: ${{ github.run_number }}"
+        echo "Failure time: $(date -u)"
 
     - name: Notify on success with changes
       if: success() && steps.check-changes.outputs.has_changes == 'true'
       run: |
-        echo "✅ 同步成功，发现新更新!"
-        echo "仓库: ${{ github.repository }}"
-        echo "更新时间: $(date -u)"
-        echo "请检查sync-data分支并手动合并到main分支"
+        echo "✅ Sync successful, new updates found!"
+        echo "Repository: ${{ github.repository }}"
+        echo "Update time: $(date -u)"
+        echo "Please check sync-data branch and manually merge to main branch"
 
     - name: Final status
       if: always()
       run: |
-        echo "=== 同步工作流完成 ==="
-        echo "状态: ${{ job.status }}"
-        echo "总运行时间: ${{ job.status }}"
+        echo "=== Sync workflow completed ==="
+        echo "Status: ${{ job.status }}"
+        echo "Total runtime: ${{ job.status }}"

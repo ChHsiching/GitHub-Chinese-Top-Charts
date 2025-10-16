@@ -1,40 +1,40 @@
 #!/bin/bash
 
-# 从Classified仓库同步总榜数据到当前仓库
-# 将总榜数据格式转换为适合当前仓库的格式
+# Sync overall chart data from Classified repository to current repository
+# Convert overall chart data format to suit current repository format
 #
-# 使用方法:
-#   ./scripts/sync_from_classified.sh      # 正常执行同步
-#   ./scripts/sync_from_classified.sh --safe  # 安全模式，只检查不执行
+# Usage:
+#   ./scripts/sync_from_classified.sh      # Normal sync execution
+#   ./scripts/sync_from_classified.sh --safe  # Safe mode, check only without execution
 
-set -e  # 遇到错误立即退出
+set -e  # Exit immediately on error
 
-# 日志函数
+# Logging function
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
 }
 
-# 错误处理函数
+# Error handling function
 handle_error() {
-    log "错误: $1"
+    log "Error: $1"
     exit 1
 }
 
-# 格式化星数函数
+# Format stars function
 format_stars() {
     local stars=$1
     if [[ $stars -ge 1000 ]]; then
-        # 转换为k格式，保留1位小数
+        # Convert to k format, keep 1 decimal place
         echo "$(echo "scale=1; $stars/1000" | bc 2>/dev/null || echo $((stars/1000)))k"
     else
         echo "$stars"
     fi
 }
 
-# 格式化日期函数
+# Format date function
 format_date() {
     local date_str=$1
-    # 转换 YYYY-MM-DD 到 MM/DD 格式
+    # Convert YYYY-MM-DD to MM/DD format
     if [[ $date_str =~ ^([0-9]{4})-([0-9]{2})-([0-9]{2})$ ]]; then
         echo "${BASH_REMATCH[2]}/${BASH_REMATCH[3]}"
     else
@@ -42,10 +42,10 @@ format_date() {
     fi
 }
 
-# 简化描述函数
+# Simplify description function
 simplify_description() {
     local desc=$1
-    # 限制描述长度，保留前100个字符
+    # Limit description length, keep first 100 characters
     if [[ ${#desc} -gt 100 ]]; then
         echo "${desc:0:100}..."
     else
@@ -53,7 +53,7 @@ simplify_description() {
     fi
 }
 
-# 配置变量
+# Configuration variables
 CLASSIFIED_REPO_PATH="../GitHub-Chinese-Top-Charts-Classified"
 CLASSIFIED_DATA_PATH="${CLASSIFIED_REPO_PATH}/content/charts/overall/software/All-Language.md"
 TEMP_DIR="/tmp/sync-data-$(date +%s)"
@@ -61,136 +61,138 @@ SYNC_BRANCH="sync-data"
 LOG_FILE="sync.log"
 SAFE_MODE=false
 
-# 检查安全模式参数
+# Check safe mode parameter
 if [ "$1" = "--safe" ] || [ "$1" = "-s" ]; then
     SAFE_MODE=true
-    log "安全模式启用 - 只检查不执行实际同步"
+    log "Safe mode enabled - Check only without actual execution"
 fi
 
-# 清理函数
+# Cleanup function
 cleanup() {
-    log "清理临时文件..."
+    log "Cleaning up temporary files..."
     rm -rf "$TEMP_DIR"
-    # 清理sync.log文件
+    # Clean up sync.log file
     if [ -f "sync.log" ]; then
         rm -f sync.log 2>/dev/null || true
     fi
-    log "清理完成"
+    log "Cleanup completed"
 }
 
-# 设置trap确保脚本退出时清理
+# Set trap to ensure cleanup when script exits
 trap cleanup EXIT
 
-# 开始同步
-log "=== 开始从Classified仓库同步数据 ==="
-log "数据源: $CLASSIFIED_DATA_PATH"
+# Start sync
+log "=== Starting data sync from Classified repository ==="
+log "Data source: $CLASSIFIED_DATA_PATH"
 
-# 检查当前Git仓库状态
+# Check current Git repository status
 if [[ ! -d ".git" ]]; then
-    handle_error "当前目录不是Git仓库"
+    handle_error "Current directory is not a Git repository"
 fi
 
-# 检查Git工作目录是否干净
+# Check if Git working directory is clean
 STATUS_OUTPUT=$(git status --porcelain)
-# 过滤掉sync.log文件
-FILTERED_STATUS=$(echo "$STATUS_OUTPUT" | grep -v "?? sync.log" || true)
+# Filter out common temporary and untracked files that can be safely ignored
+FILTERED_STATUS=$(echo "$STATUS_OUTPUT" | grep -v -E "(^\?\? sync\.log$|^\?\? SYNC_STATUS\.md$|^\?\? \.DS_Store$|^\?\? Thumbs\.db$)" || true)
 if [[ -n "$FILTERED_STATUS" ]]; then
-    handle_error "工作目录不干净，请先提交或暂存更改"
+    log "Working directory status:"
+    echo "$STATUS_OUTPUT"
+    handle_error "Working directory is not clean, please commit or stage changes"
 fi
 
-# 获取当前分支
+# Get current branch
 CURRENT_BRANCH=$(git branch --show-current)
 if [ -z "$CURRENT_BRANCH" ]; then
-    CURRENT_BRANCH="main"  # 默认分支
+    CURRENT_BRANCH="main"  # Default branch
 fi
-log "当前分支: $CURRENT_BRANCH"
+log "Current branch: $CURRENT_BRANCH"
 
-# 检查Classified仓库和数据文件
+# Check Classified repository and data files
 if [[ ! -d "$CLASSIFIED_REPO_PATH" ]]; then
-    handle_error "Classified仓库不存在: $CLASSIFIED_REPO_PATH"
+    handle_error "Classified repository does not exist: $CLASSIFIED_REPO_PATH"
 fi
 
 if [[ ! -f "$CLASSIFIED_DATA_PATH" ]]; then
-    handle_error "Classified数据文件不存在: $CLASSIFIED_DATA_PATH"
+    handle_error "Classified data file does not exist: $CLASSIFIED_DATA_PATH"
 fi
 
-# 如果是安全模式，只检查不执行
+# If safe mode, check only without execution
 if [ "$SAFE_MODE" = true ]; then
-    log "[安全模式] 检查数据源..."
+    log "[Safe Mode] Checking data source..."
     if [[ -f "$CLASSIFIED_DATA_PATH" ]]; then
         TOTAL_LINES=$(grep -c "^\|" "$CLASSIFIED_DATA_PATH" || echo "0")
-        log "[安全模式] Classified数据文件包含 $TOTAL_LINES 个项目"
+        log "[Safe Mode] Classified data file contains $TOTAL_LINES items"
 
-        # 显示前5个项目
-        log "[安全模式] 前5个项目预览:"
+        # Show first 5 items
+        log "[Safe Mode] First 5 items preview:"
         grep "^\|" "$CLASSIFIED_DATA_PATH" | head -n 5 | while read line; do
-            log "[安全模式] $line"
+            log "[Safe Mode] $line"
         done
     fi
 
-    log "[安全模式] 检查当前README.md..."
+    log "[Safe Mode] Checking current README.md..."
     if [[ -f "README.md" ]]; then
         CURRENT_LINES=$(grep -c "^\|" README.md || echo "0")
-        log "[安全模式] 当前README.md包含 $CURRENT_LINES 个项目"
+        log "[Safe Mode] Current README.md contains $CURRENT_LINES items"
     fi
 
-    log "[安全模式] 检查完成，未执行实际操作"
+    log "[Safe Mode] Check completed, no actual operations executed"
     exit 0
 fi
 
-# 创建临时工作目录
+# Create temporary working directory
 mkdir -p "$TEMP_DIR"
 
-# 备份当前README.md
-log "备份当前README.md..."
+# Backup current README.md
+log "Backing up current README.md..."
 cp README.md "$TEMP_DIR/README.md.backup"
 
-# 检查sync-data分支是否存在
+# Check if sync-data branch exists
 if git show-ref --verify --quiet "refs/heads/$SYNC_BRANCH"; then
-    log "删除已存在的 $SYNC_BRANCH 分支..."
+    log "Deleting existing $SYNC_BRANCH branch..."
     git branch -D "$SYNC_BRANCH"
 fi
 
-# 创建新的sync-data分支
-log "创建同步分支: $SYNC_BRANCH"
+# Create new sync-data branch
+log "Creating sync branch: $SYNC_BRANCH"
 git checkout --orphan "$SYNC_BRANCH"
 
-# 清理工作目录
+# Clean up working directory
 git rm -rf . 2>/dev/null || true
-log "清理工作目录完成"
+log "Working directory cleanup completed"
 
-# 恢复所有文件（除了README.md）
-log "恢复文件..."
+# Restore all files (except README.md)
+log "Restoring files..."
 cp -r "$TEMP_DIR/README.md.backup" README.md 2>/dev/null || true
 
-# 恢复其他重要文件
+# Restore other important files
 IMPORTANT_FILES=(".gitattributes" "LICENSE" "README-Part2.md" "CLAUDE.md" ".github" "scripts")
 for file in "${IMPORTANT_FILES[@]}"; do
     if [ -e "../$CURRENT_BRANCH/$file" ]; then
-        log "恢复文件: $file"
+        log "Restoring file: $file"
         cp -r "../$CURRENT_BRANCH/$file" . 2>/dev/null || true
     fi
 done
 
-# 解析Classified数据并转换格式
-log "解析和转换数据格式..."
+# Parse Classified data and convert format
+log "Parsing and converting data format..."
 
-# 创建临时数据文件
+# Create temporary data file
 TEMP_DATA_FILE="$TEMP_DIR/converted_data.md"
 
-# 提取并转换数据表格
-log "开始数据转换..."
+# Extract and convert data table
+log "Starting data conversion..."
 in_table=false
 row_count=0
 
-# 添加表头
+# Add table header
 echo "|#|Repository|Description|Stars|Language|Updated|" >> "$TEMP_DATA_FILE"
 echo "|:-|:-|:-|:-|:-|:-|" >> "$TEMP_DATA_FILE"
 
 while IFS= read -r line; do
     if [[ $line =~ ^\|\s*[0-9]+\s*\|\s*\[.*\]\(.*\)\s*\|.*\|.*\|.*\|.*\|$ ]]; then
-        # 数据行，需要转换格式
-        # 使用cut解析数据行
+        # Data row, need to convert format
+        # Use cut to parse data row
         rank=$(echo "$line" | cut -d'|' -f2 | tr -d ' ')
         repo_part=$(echo "$line" | cut -d'|' -f3)
         description=$(echo "$line" | cut -d'|' -f4)
@@ -198,76 +200,76 @@ while IFS= read -r line; do
         language=$(echo "$line" | cut -d'|' -f6 | tr -d ' ')
         updated=$(echo "$line" | cut -d'|' -f7 | tr -d ' ')
 
-        # 从repo部分解析出repo_name和repo_url
+        # Parse repo_name and repo_url from repo part
         repo_name=$(echo "$repo_part" | sed 's/^\[//; s/\].*$//')
         repo_url=$(echo "$repo_part" | sed 's/^.*(\(.*\))/\1/')
 
-        # 验证解析结果
+        # Validate parsing result
         if [[ -z "$repo_name" || -z "$repo_url" ]]; then
             continue
         fi
 
-        # 格式转换
+        # Format conversion
         formatted_stars=$(format_stars "$stars")
-        # 保持原始日期格式 YYYY-MM-DD
+        # Keep original date format YYYY-MM-DD
         simplified_desc=$(simplify_description "$description")
 
-        # 重新构建行
+        # Rebuild line
         new_line="|$rank|[$repo_name]($repo_url)|$simplified_desc|$formatted_stars|$language|$updated|"
         echo "$new_line" >> "$TEMP_DATA_FILE"
 
         row_count=$((row_count + 1))
         if [[ $((row_count % 10)) -eq 0 ]]; then
-            log "已处理 $row_count 个项目..."
+            log "Processed $row_count items..."
         fi
     fi
 done < "$CLASSIFIED_DATA_PATH"
 
-log "数据转换完成，共处理 $row_count 个项目"
+log "Data conversion completed, processed $row_count items total"
 
-# 分割数据并更新README.md
-log "分割数据并更新README.md..."
+# Split data and update README.md
+log "Splitting data and updating README.md..."
 
-# 读取当前README.md内容
+# Read current README.md content
 README_CONTENT=$(cat README.md)
 
-# 更新README.md开头的"最近更新时间"
+# Update "Last updated time" at the beginning of README.md
 CURRENT_DATE=$(date '+%Y年%m月%d日')
 README_CONTENT=$(echo "$README_CONTENT" | sed "s/最近更新时间为.*月.*日/最近更新时间为$CURRENT_DATE/")
 
-# 找到All Language部分的开始和结束
+# Find start and end of All Language section
 ALL_LANG_START=$(echo "$README_CONTENT" | grep -n "^## All Language$" | cut -d: -f1)
 if [[ -z "$ALL_LANG_START" ]]; then
-    handle_error "未找到README.md中的All Language部分"
+    handle_error "All Language section not found in README.md"
 fi
 
-# 找到下一个主要标题作为结束位置
+# Find next major heading as end position
 ALL_LANG_END=$(echo "$README_CONTENT" | tail -n +$((ALL_LANG_START + 1)) | grep -n "^## " | head -n 1 | cut -d: -f1)
 
 if [[ -z "$ALL_LANG_END" ]]; then
-    # 如果没有找到下一个标题，则到文件末尾
+    # If no next heading found, go to end of file
     ALL_LANG_END=$(echo "$README_CONTENT" | wc -l)
 else
     ALL_LANG_END=$((ALL_LANG_START + ALL_LANG_END - 1))
 fi
 
-# 分割数据：前50个在README.md，其余的在README-Part2.md
+# Split data: first 50 in README.md, rest in README-Part2.md
 HEAD_COUNT=50
 TEMP_DATA_FILE_PART2="$TEMP_DIR/converted_data_part2.md"
 
-# 提取表头
+# Extract header
 head -n 2 "$TEMP_DATA_FILE" > "$TEMP_DATA_FILE_PART2"
 
-# 提取数据并分割
+# Extract data and split
 TOTAL_TABLE_LINES=$(tail -n +3 "$TEMP_DATA_FILE" | wc -l)
 MAIN_TABLE_LINES=$(tail -n +3 "$TEMP_DATA_FILE" | head -n $HEAD_COUNT)
 PART2_TABLE_LINES=$(tail -n +3 "$TEMP_DATA_FILE" | tail -n +$((HEAD_COUNT + 1)))
 
-# 构建README.md
-log "构建README.md..."
+# Build README.md
+log "Building README.md..."
 HEAD_CONTENT=$(echo "$README_CONTENT" | head -n $((ALL_LANG_START - 1)))
 
-# 更新HEAD_CONTENT中的时间
+# Update time in HEAD_CONTENT
 HEAD_CONTENT=$(echo "$HEAD_CONTENT" | sed "s/最近更新时间为.*月.*日/最近更新时间为$CURRENT_DATE/")
 
 echo "$HEAD_CONTENT" > README.md
@@ -275,15 +277,15 @@ echo "" >> README.md
 echo "## All Language" >> README.md
 echo "" >> README.md
 
-# 添加表头和前50个数据
+# Add header and first 50 data
 head -n 2 "$TEMP_DATA_FILE" >> README.md
 echo "$MAIN_TABLE_LINES" >> README.md
 
-# 添加指向README-Part2.md的链接
+# Add link to README-Part2.md
 echo "" >> README.md
-echo "查看完整榜单请访问：[README-Part2.md](README-Part2.md)" >> README.md
+echo "View complete ranking at: [README-Part2.md](README-Part2.md)" >> README.md
 
-# 保留All Language之后的内容（如果存在）
+# Keep content after All Language section (if exists)
 TAIL_START=$((ALL_LANG_END + 1))
 TOTAL_LINES=$(echo "$README_CONTENT" | wc -l)
 
@@ -292,55 +294,55 @@ if [[ $TAIL_START -le $TOTAL_LINES ]]; then
     echo "$README_CONTENT" | tail -n +$TAIL_START >> README.md
 fi
 
-# 构建README-Part2.md
-log "构建README-Part2.md..."
-echo "# 一个README容纳不下，第二个README接上" > README-Part2.md
+# Build README-Part2.md
+log "Building README-Part2.md..."
+echo "# One README can't contain everything, second README continues" > README-Part2.md
 echo "" >> README-Part2.md
-echo "## All Language (继续)" >> README-Part2.md
+echo "## All Language (continued)" >> README-Part2.md
 echo "" >> README-Part2.md
 
-# 添加表头和剩余数据
+# Add header and remaining data
 cat "$TEMP_DATA_FILE_PART2" >> README-Part2.md
 echo "$PART2_TABLE_LINES" >> README-Part2.md
 
-log "README.md和README-Part2.md更新完成"
+log "README.md and README-Part2.md update completed"
 
-# 确保没有sync.log文件
+# Ensure no sync.log file
 if [ -f "sync.log" ]; then
     rm -f sync.log 2>/dev/null || true
 fi
 
-# 添加所有更改
-log "添加文件到Git..."
+# Add all changes
+log "Adding files to Git..."
 git add .
 
-# 提交更改
-COMMIT_MSG="自动同步自Classified仓库 - $(date '+%Y-%m-%d %H:%M:%S')
+# Commit changes
+COMMIT_MSG="Auto sync from Classified repository - $(date '+%Y-%m-%d %H:%M:%S')
 
-数据来源: $CLASSIFIED_DATA_PATH
-处理项目数: $row_count
-同步时间: $(date)"
+Data source: $CLASSIFIED_DATA_PATH
+Processed items: $row_count
+Sync time: $(date)"
 
-log "提交更改..."
+log "Committing changes..."
 if ! git commit -m "$COMMIT_MSG"; then
-    handle_error "提交失败"
+    handle_error "Commit failed"
 fi
-log "提交完成"
+log "Commit completed"
 
-# 显示同步结果
-log "=== 同步完成 ==="
-log "最新提交:"
+# Show sync results
+log "=== Sync completed ==="
+log "Latest commits:"
 git log --oneline -n 3
 
-# 显示文件统计
+# Show file statistics
 if command -v wc &> /dev/null; then
     TOTAL_FILES=$(find . -name "*.md" -not -path "./.git/*" | wc -l)
-    log "Markdown文件总数: $TOTAL_FILES"
+    log "Total Markdown files: $TOTAL_FILES"
 fi
 
-# 显示表格行数
+# Show table row count
 TABLE_ROWS=$(grep -c "^\|.*\|.*\|.*\|.*\|.*\|" README.md || echo "0")
-log "README.md中的表格行数: $TABLE_ROWS"
+log "Number of table rows in README.md: $TABLE_ROWS"
 
-log "同步脚本执行完成"
+log "Sync script execution completed"
 exit 0
