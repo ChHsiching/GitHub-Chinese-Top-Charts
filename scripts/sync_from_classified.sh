@@ -20,12 +20,18 @@ handle_error() {
     exit 1
 }
 
-# Format stars function
+# Format stars function (without bc dependency)
 format_stars() {
     local stars=$1
     if [[ $stars -ge 1000 ]]; then
-        # Convert to k format, keep 1 decimal place
-        echo "$(echo "scale=1; $stars/1000" | bc 2>/dev/null || echo $((stars/1000)))k"
+        # Convert to k format using bash arithmetic only
+        local thousands=$((stars / 1000))
+        local remainder=$((stars % 1000))
+        if [[ $remainder -ge 100 ]]; then
+            echo "${thousands}.$((remainder / 100))k"
+        else
+            echo "${thousands}k"
+        fi
     else
         echo "$stars"
     fi
@@ -54,12 +60,29 @@ simplify_description() {
 }
 
 # Configuration variables
-CLASSIFIED_REPO_PATH="../GitHub-Chinese-Top-Charts-Classified"
-CLASSIFIED_DATA_PATH="${CLASSIFIED_REPO_PATH}/content/charts/overall/software/All-Language.md"
+# Use absolute path for GitHub Actions environment compatibility
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(git rev-parse --show-toplevel)"
 TEMP_DIR="/tmp/sync-data-$(date +%s)"
 SYNC_BRANCH="sync-data"
 LOG_FILE="sync.log"
 SAFE_MODE=false
+
+# Set Classified repository path based on environment
+if [[ -n "$GITHUB_ACTIONS" ]]; then
+    # GitHub Actions environment - use parent directory of workspace
+    WORKSPACE_DIR="$(pwd)"
+    CLASSIFIED_REPO_PATH="${WORKSPACE_DIR}/../GitHub-Chinese-Top-Charts-Classified"
+else
+    # Local environment - use relative path
+    CLASSIFIED_REPO_PATH="../GitHub-Chinese-Top-Charts-Classified"
+fi
+
+CLASSIFIED_DATA_PATH="${CLASSIFIED_REPO_PATH}/content/charts/overall/software/All-Language.md"
+
+log "Repository root: $REPO_ROOT"
+log "Classified repo path: $CLASSIFIED_REPO_PATH"
+log "Data file path: $CLASSIFIED_DATA_PATH"
 
 # Check safe mode parameter
 if [ "$1" = "--safe" ] || [ "$1" = "-s" ]; then
@@ -93,11 +116,16 @@ fi
 # Check if Git working directory is clean
 STATUS_OUTPUT=$(git status --porcelain)
 # Filter out common temporary and untracked files that can be safely ignored
-FILTERED_STATUS=$(echo "$STATUS_OUTPUT" | grep -v -E "(^\?\? sync\.log$|^\?\? SYNC_STATUS\.md$|^\?\? \.DS_Store$|^\?\? Thumbs\.db$)" || true)
+# Including GitHub Actions specific files and common system files
+FILTERED_STATUS=$(echo "$STATUS_OUTPUT" | grep -v -E "(^\?\? sync\.log$|^\?\? SYNC_STATUS\.md$|^\?\? \.DS_Store$|^\?\? Thumbs\.db$|^\?\? \.vscode/|^\?\? \.idea/|^\?\? node_modules/|^\?\? \.gitignore$|^\?\? \.gitattributes$|^\?\? LICENSE$)" || true)
 if [[ -n "$FILTERED_STATUS" ]]; then
-    log "Working directory status:"
+    log "Working directory is not clean. Details:"
     echo "$STATUS_OUTPUT"
+    echo "Filtered temporary files, still showing changes:"
+    echo "$FILTERED_STATUS"
     handle_error "Working directory is not clean, please commit or stage changes"
+else
+    log "Working directory is clean (temporary files filtered)"
 fi
 
 # Get current branch
@@ -108,13 +136,25 @@ fi
 log "Current branch: $CURRENT_BRANCH"
 
 # Check Classified repository and data files
+log "Checking Classified repository and data files..."
 if [[ ! -d "$CLASSIFIED_REPO_PATH" ]]; then
+    log "ERROR: Classified repository path not found: $CLASSIFIED_REPO_PATH"
+    log "Current working directory: $(pwd)"
+    log "Listing parent directory contents:"
+    ls -la ../ 2>/dev/null || log "Cannot list parent directory"
     handle_error "Classified repository does not exist: $CLASSIFIED_REPO_PATH"
 fi
 
 if [[ ! -f "$CLASSIFIED_DATA_PATH" ]]; then
+    log "ERROR: Classified data file not found: $CLASSIFIED_DATA_PATH"
+    log "Classified repository contents:"
+    ls -la "$CLASSIFIED_REPO_PATH" 2>/dev/null || log "Cannot list Classified repository"
+    log "Content directory contents:"
+    ls -la "$CLASSIFIED_REPO_PATH/content" 2>/dev/null || log "Cannot list content directory"
     handle_error "Classified data file does not exist: $CLASSIFIED_DATA_PATH"
 fi
+
+log "Classified repository and data files verified successfully"
 
 # If safe mode, check only without execution
 if [ "$SAFE_MODE" = true ]; then
@@ -157,7 +197,11 @@ fi
 log "Creating sync branch: $SYNC_BRANCH"
 git checkout --orphan "$SYNC_BRANCH"
 
-# Clean up working directory
+# Clean up working directory safely (avoid git rm -rf .)
+log "Cleaning working directory safely..."
+# Remove all tracked files safely
+find . -maxdepth 1 -not -name "." -not -name ".git" -print0 | xargs -0 rm -rf 2>/dev/null || true
+# Remove git index
 git rm -rf . 2>/dev/null || true
 log "Working directory cleanup completed"
 
