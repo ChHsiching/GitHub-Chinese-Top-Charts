@@ -1,18 +1,13 @@
 name: Sync from Classified Repository
 
 on:
-  # Schedule trigger - Run weekly on Monday at UTC 6:00 (Beijing Time 14:00)
-  schedule:
-    - cron: '0 6 * * 1'
-
-  # Manual trigger
-  workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Manual sync reason'
-        required: false
-        default: 'Manual sync test'
-        type: string
+  # WORKFLOW DISABLED - To prevent spammy behavior and account issues
+  # workflow_dispatch:
+  #   inputs:
+  #     reason:
+  #       description: 'Reason for sync'
+  #       required: true
+  #       type: string
 
 # Allow this workflow to write to the repository
 permissions:
@@ -34,10 +29,35 @@ jobs:
         git config --global user.name "ChHsiching"
         git config --global user.email "hsichingchang@gmail.com"
 
+    - name: Safety checks and confirmation
+      run: |
+        echo "=== SAFETY CHECKS ==="
+        echo "This workflow performs automated Git operations"
+        echo "Repository: ${{ github.repository }}"
+        echo "Trigger reason: ${{ github.event.reason }}"
+        echo "Dry run mode: ${{ github.event.inputs.dry_run }}"
+
+        # Check confirmation
+        if [ "${{ github.event.inputs.confirm }}" != "CONFIRM" ]; then
+          echo "❌ ERROR: Confirmation not provided. Type 'CONFIRM' to proceed."
+          echo "This prevents accidental executions that could trigger spam detection."
+          exit 1
+        fi
+
+        # Check if reason is meaningful
+        if [[ "${{ github.event.inputs.reason }}" =~ ^(test|testing|debug)$ ]]; then
+          echo "❌ ERROR: Test reasons not allowed. Please provide a meaningful reason."
+          echo "This prevents frequent test runs that could be flagged as spammy."
+          exit 1
+        fi
+
+        echo "✅ Safety checks passed"
+        echo "Proceeding with sync reason: ${{ github.event.inputs.reason }}"
+
     - name: Display environment info
       run: |
         echo "Current time: $(date)"
-        echo "Trigger reason: ${{ github.event_name }}"
+        echo "Trigger reason: ${{ github.event.reason }}"
         echo "Working directory: $(pwd)"
         echo "Repository: ${{ github.repository }}"
 
