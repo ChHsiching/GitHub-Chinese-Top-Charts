@@ -523,6 +523,7 @@
 |198|[benitoro/stockholm](https://github.com/benitoro/stockholm)|一个股票数据（沪深）爬虫和选股策略测试框架|888|Python|08/14|
 |199|[HatBoy/Struts2-Scan](https://github.com/HatBoy/Struts2-Scan)|Struts2全漏洞扫描利用工具|885|Python|10/19|
 |200|[PKUJohnson/OpenData](https://github.com/PKUJohnson/OpenData)|开源的金融投资数据提取工具，专注在各类网站上爬取数据，并通过简单易用的API方式使用|874|Python|08/31|
+|201|[tcwhvi/agent-tps-hud](https://github.com/tcwhvi/agent-tps-hud)|Windows 置顶小窗，实时显示 ZCode / Qoder / WorkBuddy / MiMo 的 tokens/s；只读本地会话数据，无需代理或 API Key|0|Python|10/21|
 
 ⬆ [回到目录](#目录)
 
